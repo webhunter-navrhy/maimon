@@ -70,6 +70,6 @@
   </div>
 </footer>
 <script src="{{ asset('js/main.js') }}" defer></script>
-<nav aria-label="Varianty nového úvodu" style="position:fixed;left:50%;transform:translateX(-50%);bottom:1rem;z-index:999;display:flex;align-items:center;gap:.3rem;background:#0E2236;color:#fff;border-radius:999px;padding:.35rem .4rem .35rem 1rem;font:500 .85rem/1 system-ui,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.25)"><span style="margin-right:.4rem;opacity:.8">Nové varianty úvodu</span>{% for v in ['a','b','c'] %}<a href="{{ url('koncepty/' ~ v) }}" style="display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:#F2621D;color:#fff;text-decoration:none">{{ v|upper }}</a>{% endfor %}</nav>
+<nav aria-label="Varianty nového úvodu" style="position:fixed;left:50%;transform:translateX(-50%);bottom:1rem;z-index:999;display:flex;align-items:center;gap:.3rem;background:#0E2236;color:#fff;border-radius:999px;padding:.35rem .4rem .35rem 1rem;font:500 .85rem/1 system-ui,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.25)"><span style="margin-right:.4rem;opacity:.8;white-space:nowrap">Varianty úvodu</span>{% for v in ['a','b','c'] %}<a href="{{ url('koncepty/' ~ v) }}" style="display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:#F2621D;color:#fff;text-decoration:none">{{ v|upper }}</a>{% endfor %}</nav>
 </body>
 </html>
