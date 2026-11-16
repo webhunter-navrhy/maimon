@@ -26,7 +26,7 @@
     <div class="zn-plochy">
       <div class="zn-plocha zn-svetla"><img src="{{ base }}brand/{{ l.id }}-light.svg" alt="Logo {{ l.id|upper }} na světlém podkladu" width="{{ l.w }}" height="{{ l.h }}" loading="lazy"></div>
       <div class="zn-plocha zn-tmava"><img src="{{ base }}brand/{{ l.id }}-dark.svg" alt="Logo {{ l.id|upper }} na tmavém podkladu" width="{{ l.w }}" height="{{ l.h }}" loading="lazy"></div>
-      <div class="zn-plocha zn-limetka"><img src="{{ base }}brand/{{ l.id }}-lime.svg" alt="Logo {{ l.id|upper }} na limetkovém podkladu" width="{{ l.w }}" height="{{ l.h }}" loading="lazy"></div>
+      <div class="zn-plocha zn-signal"><img src="{{ base }}brand/{{ l.id }}-signal.svg" alt="Logo {{ l.id|upper }} na oranžovém podkladu" width="{{ l.w }}" height="{{ l.h }}" loading="lazy"></div>
       <div class="zn-plocha zn-ikony">
         <img src="{{ base }}brand/sym-{{ l.id }}.svg" alt="Ikona {{ l.id|upper }}" width="96" height="96" loading="lazy">
         <img src="{{ base }}brand/sym-{{ l.id }}.svg" alt="" width="48" height="48" loading="lazy">
@@ -52,16 +52,16 @@
       <div class="zn-vesta-obr">
         <svg viewBox="0 0 300 360" aria-hidden="true">
           <defs><clipPath id="vesta-tvar"><path d="M110 18 L58 30 C62 80 56 115 38 140 L44 342 L256 342 L262 140 C244 115 238 80 242 30 L190 18 C178 36 122 36 110 18 Z"/></clipPath></defs>
-          <path d="M110 18 L58 30 C62 80 56 115 38 140 L44 342 L256 342 L262 140 C244 115 238 80 242 30 L190 18 C178 36 122 36 110 18 Z" fill="#D2F53C"/>
+          <path d="M110 18 L58 30 C62 80 56 115 38 140 L44 342 L256 342 L262 140 C244 115 238 80 242 30 L190 18 C178 36 122 36 110 18 Z" fill="#F2621D"/>
           <g clip-path="url(#vesta-tvar)">
             <rect x="30" y="252" width="240" height="20" fill="#C9CCCF"/><rect x="30" y="296" width="240" height="20" fill="#C9CCCF"/>
             <rect x="30" y="252" width="240" height="2" fill="#fff" opacity=".7"/><rect x="30" y="296" width="240" height="2" fill="#fff" opacity=".7"/>
           </g>
-          <path d="M110 18 L58 30 C62 80 56 115 38 140 L44 342 L256 342 L262 140 C244 115 238 80 242 30 L190 18 C178 36 122 36 110 18 Z" fill="none" stroke="#15171A" stroke-opacity=".25" stroke-width="2"/>
+          <path d="M110 18 L58 30 C62 80 56 115 38 140 L44 342 L256 342 L262 140 C244 115 238 80 242 30 L190 18 C178 36 122 36 110 18 Z" fill="none" stroke="#0E2236" stroke-opacity=".25" stroke-width="2"/>
         </svg>
-        <img data-zn="lime" src="{{ base }}brand/c-lime.svg" alt="Logo na zádech reflexní vesty" width="754" height="310" loading="lazy">
+        <img data-zn="signal" src="{{ base }}brand/c-signal.svg" alt="Logo na zádech reflexní vesty" width="754" height="310" loading="lazy">
       </div>
-      <figcaption>Reflexní vesta, záda. Limetka značky je zároveň signální barva.</figcaption>
+      <figcaption>Reflexní vesta, záda. Oranžová značky je zároveň barva reflexních vest.</figcaption>
     </figure>
 
     <figure class="zn-mock zn-vizitky r">
@@ -80,13 +80,13 @@
     <figure class="zn-mock zn-auto r">
       <div class="zn-auto-obr">
         <svg viewBox="0 0 600 260" aria-hidden="true">
-          <ellipse cx="300" cy="240" rx="280" ry="10" fill="#15171A" opacity=".12"/>
-          <path d="M20 205 L20 72 Q20 42 50 42 L470 42 Q492 42 506 62 L558 132 Q582 138 582 164 L582 205 Z" fill="#FAF9F5" stroke="#15171A" stroke-opacity=".2" stroke-width="2"/>
-          <path d="M448 58 L494 58 L538 126 L448 126 Z" fill="#2A2D31"/>
-          <rect x="20" y="176" width="562" height="14" fill="#D2F53C"/>
-          <rect x="380" y="58" width="2" height="146" fill="#15171A" opacity=".15"/>
-          <circle cx="132" cy="206" r="34" fill="#15171A"/><circle cx="132" cy="206" r="13" fill="#D9D5CA"/>
-          <circle cx="470" cy="206" r="34" fill="#15171A"/><circle cx="470" cy="206" r="13" fill="#D9D5CA"/>
+          <ellipse cx="300" cy="240" rx="280" ry="10" fill="#0E2236" opacity=".12"/>
+          <path d="M20 205 L20 72 Q20 42 50 42 L470 42 Q492 42 506 62 L558 132 Q582 138 582 164 L582 205 Z" fill="#FBF9F5" stroke="#0E2236" stroke-opacity=".2" stroke-width="2"/>
+          <path d="M448 58 L494 58 L538 126 L448 126 Z" fill="#17324D"/>
+          <rect x="20" y="176" width="562" height="14" fill="#F2621D"/>
+          <rect x="380" y="58" width="2" height="146" fill="#0E2236" opacity=".15"/>
+          <circle cx="132" cy="206" r="34" fill="#0E2236"/><circle cx="132" cy="206" r="13" fill="#E2DCD0"/>
+          <circle cx="470" cy="206" r="34" fill="#0E2236"/><circle cx="470" cy="206" r="13" fill="#E2DCD0"/>
         </svg>
         <img data-zn="light" src="{{ base }}brand/c-light.svg" alt="Logo na boku dodávky" width="754" height="310" loading="lazy">
       </div>
@@ -140,14 +140,14 @@
 <section class="blok dva-sl" aria-labelledby="barvy-h">
   <div>
     <h2 id="barvy-h" class="nadpis">Barvy</h2>
-    <p class="perex">Papír a&nbsp;inkoust nesou většinu plochy. Limetka je signál: tlačítko, obsazená směna, vesta. Čím méně jí je, tím víc svítí.</p>
+    <p class="perex">Slonová kost a&nbsp;námořnická modř nesou většinu plochy a&nbsp;důvěru. Oranžová je signál: tlačítko, obsazená směna, vesta. Čím méně jí je, tím víc svítí.</p>
   </div>
   <div class="zn-barvy">
-    <div class="zn-barva" style="--b:#F1EFE8"><span></span><p><strong>Papír</strong> #F1EFE8</p></div>
-    <div class="zn-barva" style="--b:#D9D5CA"><span></span><p><strong>Kámen</strong> #D9D5CA</p></div>
-    <div class="zn-barva" style="--b:#15171A"><span></span><p><strong>Inkoust</strong> #15171A</p></div>
-    <div class="zn-barva" style="--b:#D2F53C"><span></span><p><strong>Limetka</strong> #D2F53C</p></div>
-    <div class="zn-pomer" aria-label="Doporučený poměr barev"><span style="flex:6;background:#F1EFE8"></span><span style="flex:3;background:#15171A"></span><span style="flex:1;background:#D2F53C"></span></div>
+    <div class="zn-barva" style="--b:#F3EFE7"><span></span><p><strong>Slonová kost</strong> #F3EFE7</p></div>
+    <div class="zn-barva" style="--b:#E2DCD0"><span></span><p><strong>Písek</strong> #E2DCD0</p></div>
+    <div class="zn-barva" style="--b:#0E2236"><span></span><p><strong>Námořní modř</strong> #0E2236</p></div>
+    <div class="zn-barva" style="--b:#F2621D"><span></span><p><strong>Signální oranžová</strong> #F2621D</p></div>
+    <div class="zn-pomer" aria-label="Doporučený poměr barev"><span style="flex:6;background:#F3EFE7"></span><span style="flex:3;background:#0E2236"></span><span style="flex:1;background:#F2621D"></span></div>
     <p class="zn-pomer-popis">Poměr na ploše zhruba 6 : 3 : 1</p>
   </div>
 </section>
@@ -159,7 +159,7 @@
   </div>
   <div class="zn-pisma">
     <div class="zn-pismo">
-      <p class="stitek">Nadpisy · Bricolage Grotesque</p>
+      <p class="stitek">Nadpisy · Funnel Display</p>
       <p class="zn-ukazka-display">Doplníme lidi na směnu.</p>
       <p class="zn-znaky zn-znaky-d">ĚŠČŘŽÝÁÍÉŮÚ ěščřžýáíéůú · Po–Pá 6:00–22:00</p>
     </div>

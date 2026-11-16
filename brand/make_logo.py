@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Loga MAIMON – 3 návrhy jako čisté SVG křivky (Bricolage Grotesque, OFL).
-A = slovo „maimon“, tečka nad i je hlava (limetka)
+"""Loga MAIMON v2 – 3 návrhy jako čisté SVG křivky (Funnel Display, OFL).
+A = slovo „maimon“, tečka nad i je hlava (signální oranžová)
 B = „M“ ze dvou postav – firma a člověk, spojené rukama
 C = „M“ vyplněné v rozpisu směn 5×5 (koncept webu)"""
 import pathlib
@@ -12,12 +12,13 @@ from fontTools.pens.boundsPen import BoundsPen
 
 here = pathlib.Path(__file__).parent
 out = here.parent / 'static' / 'brand'; out.mkdir(parents=True, exist_ok=True)
-LIME, INK, PAPER, MUTED = '#D2F53C', '#15171A', '#F1EFE8', '#8C8F94'
+SIG, INK, PAPER, MUTED = '#F2621D', '#0E2236', '#F3EFE7', '#8C8F94'
+LIME = SIG  # zpětná kompatibilita názvů
 
 def inst(**ax):
-    return instantiateVariableFont(TTFont(here / 'Bricolage.ttf'), ax)
-F_WORD = inst(wght=640, wdth=82, opsz=96)
-F_SUB = inst(wght=500, wdth=100, opsz=14)
+    return instantiateVariableFont(TTFont(here / 'Funnel.ttf'), ax)
+F_WORD = inst(wght=560)
+F_SUB = inst(wght=420)
 
 def glyph(font, name, x, y, sc):
     gs = font.getGlyphSet(); pen = SVGPathPen(gs)
@@ -88,9 +89,9 @@ def mark_c(x, y, s, fg, empty, on=LIME, cells=M_CELLS):
             out.append(f'<rect x="{x+c*g+pad:.1f}" y="{y+rr*g+pad:.1f}" width="{g-2*pad:.1f}" height="{g-2*pad:.1f}" rx="{r:.1f}" fill="{fill}"/>')
     return ''.join(out)
 
-def logo_c(fg, sub, empty):
+def logo_c(fg, sub, empty, on=SIG):
     pad = 40; s = 230
-    m = mark_c(pad, pad, s, fg, empty, on=fg if fg == INK else LIME)
+    m = mark_c(pad, pad, s, fg, empty, on=on)
     tx = pad + s + 44; base = pad + s * 0.98 - 70
     d, w, _ = text(F_WORD, 'maimon', tx, base, 150, -3)
     sd, sw, _ = text(F_SUB, 'agentura práce', tx + 4, base + 58, 40, 0.5)
@@ -98,17 +99,18 @@ def logo_c(fg, sub, empty):
 
 def write(name, s): (out / name).write_text(s)
 
-for mode, fg, sub, empty in [('light', INK, '#5D6066', '#DEDAD0'), ('dark', PAPER, '#A9ACB1', '#2A2D31')]:
+for mode, fg, sub, empty in [('light', INK, '#4A5563', '#E2DCD0'), ('dark', PAPER, '#A8B4C2', '#22405E')]:
     write(f'a-{mode}.svg', logo_a(fg, sub))
     write(f'b-{mode}.svg', logo_b(fg, sub))
     write(f'c-{mode}.svg', logo_c(fg, sub, empty))
-write('a-lime.svg', logo_a(INK, INK, head=PAPER))
-write('b-lime.svg', logo_b(INK, INK, head=PAPER))
-# C na limetce (barevná verze)
-write('c-lime.svg', logo_c(INK, INK, '#BEDD33'))
+# barevná verze na signální oranžové
+write('a-signal.svg', logo_a(INK, INK, head=PAPER))
+write('b-signal.svg', logo_b(INK, INK, head=PAPER))
+write('c-signal.svg', logo_c(INK, INK, '#F58C5A', on=INK))
 # symboly
-write('sym-a.svg', svg(240, 240, word_a(0, 0, 1, INK)[0][:0] + f'<rect width="240" height="240" rx="48" fill="{INK}"/>' + text(F_WORD,'m',0,0,1)[0][:0] + f'<path d="{text(F_WORD,"m",36,182,230)[0]}" fill="{PAPER}"/>' + circ(196, 58, 20, LIME)))
-write('sym-b.svg', svg(240, 240, f'<rect width="240" height="240" rx="48" fill="{LIME}"/>' + mark_b(36, 34, 168, INK, head=PAPER)))
-write('sym-c.svg', svg(240, 240, f'<rect width="240" height="240" rx="48" fill="{INK}"/>' + mark_c(30, 30, 180, None, '#2E3236')))
-write('favicon.svg', svg(64, 64, f'<rect width="64" height="64" rx="14" fill="{INK}"/>' + mark_c(8, 8, 48, None, '#3A3E43')))
+write('sym-a.svg', svg(240, 240, f'<rect width="240" height="240" rx="48" fill="{INK}"/>' + f'<path d="{text(F_WORD,"m",34,184,230)[0]}" fill="{PAPER}"/>' + circ(194, 56, 20, SIG)))
+write('sym-b.svg', svg(240, 240, f'<rect width="240" height="240" rx="48" fill="{SIG}"/>' + mark_b(36, 34, 168, INK, head=PAPER)))
+write('sym-c.svg', svg(240, 240, f'<rect width="240" height="240" rx="48" fill="{INK}"/>' + mark_c(30, 30, 180, None, '#22405E')))
+write('favicon.svg', svg(64, 64, f'<rect width="64" height="64" rx="14" fill="{INK}"/>' + mark_c(8, 8, 48, None, '#2A4A6B')))
+for old in out.glob('*-lime.svg'): old.unlink()
 print('ok', sorted(p.name for p in out.iterdir()))

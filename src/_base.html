@@ -18,7 +18,7 @@
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">{% endif %}
 <link rel="icon" href="{{ base }}brand/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="{{ base }}fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ base }}fonts/funnel.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{{ base }}fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 {% block head %}{% endblock %}
@@ -28,12 +28,12 @@
 <a class="skip" href="#obsah">Přeskočit na obsah</a>
 <header class="hlavicka">
   <div class="hlavicka-in">
-    <a href="{{ url('') }}" class="logo" aria-label="{{ site.nazev }} – úvod"><img src="{{ base }}{{ site.logo }}" alt="Maimon – agentura práce" width="132" height="54"></a>
+    <a href="{{ url('') }}" class="logo" aria-label="{{ site.nazev }} – úvod"><img src="{{ base }}{{ site.logo }}" alt="Maimon – agentura práce" width="145" height="48"></a>
     <nav class="menu" id="menu" aria-label="Hlavní">
       {% for n in site.nav %}<a href="{{ url(n.href) }}"{% if cesta == n.href ~ '/' %} aria-current="page"{% endif %}>{{ n.text }}</a>{% endfor %}
       <a href="{{ url('kontakt') }}" class="menu-kontakt"{% if cesta == 'kontakt/' %} aria-current="page"{% endif %}>Kontakt</a>
     </nav>
-    <a href="{{ url('kontakt') }}#poptavka" class="tl tl-lime tl-mala hlavicka-cta">Poptat lidi</a>
+    <a href="{{ url('kontakt') }}#poptavka" class="tl tl-ink tl-mala hlavicka-cta">Poptat lidi</a>
     <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Menu"><span></span><span></span></button>
   </div>
 </header>
@@ -43,9 +43,9 @@
 <footer class="paticka">
   <div class="paticka-in">
     <div class="paticka-hlava">
-      <img src="{{ base }}brand/c-dark.svg" alt="Maimon – agentura práce" width="196" height="81" loading="lazy">
+      <img src="{{ base }}brand/c-dark.svg" alt="Maimon – agentura práce" width="196" height="65" loading="lazy">
       <p class="paticka-claim">Lidi na směnu. Pro výrobu, sklady a logistiku.</p>
-      <a href="{{ url('kontakt') }}#poptavka" class="tl tl-lime">Poptat lidi</a>
+      <a href="{{ url('kontakt') }}#poptavka" class="tl tl-oranz">Poptat lidi <span aria-hidden="true">→</span></a>
     </div>
     <div class="paticka-sloupce">
       <div>

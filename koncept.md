@@ -1,43 +1,46 @@
-# Koncept MAIMON – agentura práce pro firmy (16. 11. 2026)
+# Koncept MAIMON v2 – agentura práce pro firmy (16. 11. 2026)
+
+Rafael k v1: „design nic moc. musí být více profesionální a mnohem hezčí a lepší“.
+v1 (papír + inkoust + limetka, Bricolage úzký tučný) působila plakátově a levně, málo důvěryhodně pro B2B.
+Obsah, stránky, texty a rozpis směn zůstávají, mění se celý vzhled.
 
 ## Tři koncepty
-1. **Rozpis směn** – web jako tabule směn, kterou firma potřebuje zaplnit: Po–Ne × ranní/odpolední/noční. Limetka = zvýrazňovač na rozpisu i reflexní vesta. Poptávka se „zapisuje do rozpisu“.
-2. **Vstupka na halu** – každý oddíl jako visačka / návštěvnická karta na šňůrce, nástup = „odcvaknutí“ karty.
-3. **Mapa dojezdu** – Liberec uprostřed, kruhy dojezdu k závodům v kraji.
+1. **Směnový provoz** – noční modř haly + oranžová reflexní vesta; web jako dobře vedený provoz: klidný, přesný, světlý, s jedním velkým modrým „velínem“ (rozpis směn).
+2. **Kancelář personalisty** – papírové desky, razítka, šanony. Moc úřední, Rafael nechce byrokratické tabulky.
+3. **Plán haly** – půdorys skladu, uličky jako navigace. Hezké, ale pro firmu, která chce rychle poptat lidi, odvádí pozornost.
 
-## Výběr: 1 – Rozpis směn
-- Firma nepřichází pro „HR služby“, ale s děrou v rozpisu: chybí 6 lidí na odpolední od pondělí. Web mluví přesně touhle řečí.
-- Konkurence (Manpower modrá, Adecco červená, Grafton, Jobleader) jsou korporátní portály s nabídkami práce; tenhle je jen pro firmy, světlý, plakátový, s jednou signální barvou.
-- Unese ilustrační fotky (lidi při práci), protože nosná je typografie a rozpis, ne fotka „našeho týmu“.
-- 2 je moc hravé pro B2B, 3 nemáme data (kam jezdí).
+## Výběr: 1 – Směnový provoz
+- Personální agentura prodává **spolehlivost**: firmy chtějí vidět, že lidi v pondělí v 6:00 opravdu stojí u linky. Navy = důvěra, oranžová = vesta a signál (tlačítko, obsazená směna).
+- Oranžová přímo sedí na fotky (oranžové vesty, vozíky, helmy) → fotky a značka splynou bez gradu.
+- Konkurence: Manpower/Adecco/Grafton = korporátní portály s nabídkami práce, Rapasol/IRG/Jobleader = šablony. Maimon je jen pro firmy, editoriálně čistý, s velkými fotkami a funkčním rozpisem.
 
 ## Skladba úvodu
-1. Hero: fotka haly přes celou šířku, obří „Lidi na směnu.“ + konkrétní nabídka a 2 tlačítka; pod tím už začátek rozpisu.
-2. **Signature: rozpis směn** – firma klikne obor, počet lidí, směny, dny a nástup; tabule 7×3 se zaplní limetkou, vznikne věta poptávky → přenese se do formuláře.
-3. Formy spolupráce (3 různé způsoby, řešené jako velké řádky s fotkou, ne karty): dočasné přidělení, nábor do kmene, pokrytí špičky.
-4. Obory: velké fotky s obřími slovy (výroba, sklad, potraviny, kovo, VZV).
-5. Kdo co řeší: dvousloupcové „Vy / My“ (jasné rozdělení odpovědnosti u agenturního zaměstnávání).
-6. Jak spolupráce probíhá: 4 kroky od poptávky po první směnu (pořadí je skutečné → číslování smí).
-7. Povolení a firma (placeholder čísla povolení), malý pruh „Hledáte práci?“.
-8. Kontakt / formulář.
+1. Světlá hlavička s rozmazaným pozadím, logo C vlevo, navy tlačítko „Poptat lidi“.
+2. Hero: fotka skladu přes celou plochu (~92svh), navy přechod zespodu, obří lehký nadpis „Lidi na směnu.“ vlevo dole, nabídka + tlačítka vpravo.
+3. Pás konkrétní nabídky hned pod hero (3 formy, tenké linky, bez čísel).
+4. **Signature: rozpis směn** jako jediný velký navy blok – volby na modré, tabule jako bílá karta, obsazené směny oranžové s počtem lidí, výsledná věta velkým písmem → přenese se do formuláře.
+5. Formy spolupráce: střídavé editoriální řádky velká fotka + text, odrážky oranžovou čárkou.
+6. Obory: rejstřík velkých lehkých slov s linkami; na PC se vpravo mění fotka podle oboru (hover/focus), na mobilu má každý řádek svou fotku.
+7. Kdo co řeší: dvě karty „My řešíme“ / „Vy řešíte“ + společný řádek „ze zákona“ (místo tabulky s puntíky).
+8. Předěl: fotka přes celou šířku s větou „Vy vedete práci. My řešíme všechno kolem lidí.“
+9. Kroky: svislý seznam 1–4 (pořadí je skutečné) vedle lepivého nadpisu a fotky.
+10. Povolení + hledáte práci: tichý pás.
+11. Kontakt: údaje vlevo, formulář v bílé kartě.
+12. Patička navy.
 
-Podstránky: Pro firmy, Obory, Spolupráce, O nás, Kontakt, **Značka** (3 návrhy loga + aplikace: vizitka, visačka, vesta, auto, avatar).
+Podstránky: velký lehký titulek, široká fotka, obsahové bloky, navy pás s oranžovým tlačítkem.
+Značka: 3 loga přegenerovaná (Funnel Display, navy/oranžová), mockupy přebarvené.
 
-## Písma
-- Display **Bricolage Grotesque** (wdth 75–80, opsz 96, wght ~520) – plakátové úzké, test háčků OK (render 16. 11.). Jiný než Host Grotesk (safeocean-2) i Archivo (Rox).
-- Text **Geist** 400/500.
+## Písmo
+- Display: **Funnel Display** (OFL, variabilní 300–800), nadpisy v řezu 300–400, těsné prostrkání. Test háčků 16. 11. OK (ěščřžýáíéůú ĚŠČŘŽ, regular; kurzívu nepoužíváme).
+- Text: Geist 400/500.
+- Registr: poslední display fonty Host Grotesk (safeocean-2), Bricolage (maimon v1) → Funnel je nový.
 
 ## Paleta
-papír #F1EFE8 · inkoust #15171A · signální limetka #D2F53C (jediný akcent, vždy s inkoustem) · kámen #D9D5CA · šedá textu #55585E.
-
-## Fotky
-Ilustrační Unsplash (zdroje v foto/zdroje.txt), vybrané bez cizojazyčných nápisů, jednotně lehce teplý grade; v patičce „Fotografie jsou ilustrační“.
+Slonová kost #F3EFE7 (plocha), #FBF9F5 (karty), písek #E2DCD0, námořní modř #0E2236 / #17324D, signální oranžová #F2621D (na oranžové navy text kvůli kontrastu), šedý text #4A5563.
 
 ## Zakázané vzory
-- Žádný marquee, countery, tmavá+žlutá šablona s helmou, 4 sloupce ikon.
-- Číslování jen u kroků spolupráce (skutečné pořadí) – odůvodněno.
-- Pohyb: IntersectionObserver reveal, CSS scroll-driven zvětšení fotky v hero, bez GSAP/Lenis.
+Žádný: bez marquee, zrna, tmavých statistik, nadtitulků 01/—, kurzívních slov, polaroidů, pilulkové navigace. Číslování jen u kroků (skutečné pořadí).
 
-## Porovnání
-- Rox (stejný klient): výkres, žlutá, Archivo → tady rozpis, limetka, Bricolage. Sourozenec povahou (technická přesnost), ne vzhledem.
-- safeocean-2/3: akvária, Host Grotesk, jiná skladba.
+## Fotky
+Ilustrační Unsplash (zdroje v foto/zdroje.txt), poznámka v patičce. Klient zatím vlastní fotky nemá → v `chybi`.

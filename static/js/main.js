@@ -189,13 +189,25 @@
           var typ = img.getAttribute('data-zn');
           img.src = base + 'brand/' + (typ === 'sym' ? 'sym-' + v : v + '-' + typ) + '.svg';
           if (typ !== 'sym') {
-            var w = v === 'a' ? 613 : 754, h = v === 'a' ? 342 : 310;
+            var w = v === 'a' ? 858 : 938, h = v === 'a' ? 342 : 310;
             img.setAttribute('width', w); img.setAttribute('height', h);
           }
         });
       });
     });
   }
+
+  /* ---------- obory: rejstřík přepíná fotku ---------- */
+  var obory = doc.querySelectorAll('.obor[data-i]'), oFotky = doc.querySelectorAll('.obory-foto[data-i]');
+  var ukaz = function (i) {
+    obory.forEach(function (o) { o.classList.toggle('on', o.getAttribute('data-i') === i); });
+    oFotky.forEach(function (f) { f.classList.toggle('on', f.getAttribute('data-i') === i); });
+  };
+  obory.forEach(function (o) {
+    var i = o.getAttribute('data-i');
+    o.addEventListener('mouseenter', function () { ukaz(i); });
+    o.addEventListener('focus', function () { ukaz(i); });
+  });
 
   /* ---------- formulář ---------- */
   doc.querySelectorAll('form.formular').forEach(function (f) {
