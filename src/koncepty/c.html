@@ -1,0 +1,104 @@
+{% import "koncepty/_spol.html" as k %}<!doctype html>
+<html lang="cs">
+<head>{{ k.hlava('Varianta C', 'c', 'onest') }}</head>
+<body class="kc">
+<main>
+<section class="kc-hero">
+  <div class="kc-foto">{{ img('vozik-pohyb.jpg', 'Řidič vysokozdvižného vozíku projíždí skladem', sizes='100vw', eager=True) }}</div>
+  <header class="kc-hlava">
+    <a class="kc-logo" href="{{ url('koncepty/c') }}"><img src="{{ base }}brand/c-dark.svg" alt="Maimon – agentura práce" width="172" height="57"></a>
+    <nav class="kc-nav" aria-label="Hlavní">{% for n in site.nav[:4] %}<a href="{{ url(n.href) }}">{{ n.text }}</a>{% endfor %}</nav>
+    <a href="#rozpis" class="kc-pill">Poptat lidi <span aria-hidden="true">→</span></a>
+  </header>
+  <div class="kc-hero-in">
+    <div class="kc-hero-text">
+      <p class="kc-kde">Agentura práce · Liberec</p>
+      <h1 class="kc-h"><span>Lidi na</span> směnu.</h1>
+      <p class="kc-perex">Agentura práce pro firmy z&nbsp;výroby, skladů a&nbsp;logistiky. Napíšete, kolik lidí a&nbsp;na které směny chybí, my je najdeme, zaměstnáme a&nbsp;pošleme k&nbsp;vám.</p>
+      <a href="{{ url('spoluprace') }}" class="kc-odkaz">Jak spolupráce funguje <span aria-hidden="true">→</span></a>
+    </div>
+    <form class="kc-panel" id="rozpis" action="{{ url('kontakt') }}" aria-labelledby="rozpis-h">
+      <div class="kc-panel-hlava">
+        <h2 id="rozpis-h">Rozpis směn</h2>
+        <p>Kolik lidí vám chybí?</p>
+      </div>
+      {% for s in [('ranni','Ranní','6–14'),('odpoledni','Odpolední','14–22'),('nocni','Noční','22–6')] %}
+      <div class="kc-radek">
+        <label for="s-{{ s[0] }}"><strong>{{ s[1] }}</strong><small>{{ s[2] }}</small></label>
+        <div class="kc-stepper">
+          <button type="button" data-krok="-1" aria-label="{{ s[1] }} – ubrat">−</button>
+          <input id="s-{{ s[0] }}" name="{{ s[0] }}" type="number" inputmode="numeric" min="0" max="99" value="{{ [4,2,0][loop.index0] }}">
+          <button type="button" data-krok="1" aria-label="{{ s[1] }} – přidat">+</button>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="kc-radek kc-radek-dny">
+        <label for="s-dny"><strong>Dní v&nbsp;týdnu</strong><small>po–pá, nebo i&nbsp;víkend</small></label>
+        <div class="kc-stepper">
+          <button type="button" data-krok="-1" aria-label="Dní v týdnu – ubrat">−</button>
+          <input id="s-dny" name="dny" type="number" inputmode="numeric" min="1" max="7" value="5">
+          <button type="button" data-krok="1" aria-label="Dní v týdnu – přidat">+</button>
+        </div>
+      </div>
+      <p class="kc-soucet"><span>Za týden</span><strong><output id="kc-celkem">30</output> směn</strong></p>
+      <button type="submit" class="kc-tl">Poslat rozpis <span aria-hidden="true">→</span></button>
+    </form>
+  </div>
+</section>
+
+<section class="kc-formy" aria-labelledby="formy-h">
+  <div class="kc-formy-foto">{{ img('montaz-oranzova.jpg', 'Pracovnice v oranžové vestě při montáži', sizes='(min-width: 900px) 46vw, 100vw') }}</div>
+  <div class="kc-formy-text">
+    <h2 id="formy-h">Tři způsoby, jak vám lidi doplníme</h2>
+    <p class="kc-formy-perex">Vyberte podle toho, jestli lidi potřebujete na čas, natrvalo, nebo jen na pár týdnů v&nbsp;roce.</p>
+  </div>
+  <ul class="kc-formy-rada">
+    {% for f in data.formy %}
+    <li><a href="{{ url('spoluprace') }}#{{ f.id }}">
+      <h3>{{ f.nazev }}</h3>
+      <p>{{ f.veta }}</p>
+      <span class="kc-odkaz-mal">Podrobnosti <span aria-hidden="true">→</span></span>
+    </a></li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="kc-obory" aria-labelledby="obory-h">
+  <div class="kc-obory-hlava">
+    <h2 id="obory-h">Kam lidi posíláme</h2>
+    <a href="{{ url('obory') }}" class="kc-odkaz">Pozice podle oborů <span aria-hidden="true">→</span></a>
+  </div>
+  <ul class="kc-obory-rada">
+    {% for o in data.obory %}
+    <li><a href="{{ url('obory') }}#{{ o.id }}">
+      <span class="kc-obor-foto">{{ img(o.foto, '', sizes='(min-width: 1100px) 20vw, (min-width: 820px) 33vw, 80vw') }}</span>
+      <span class="kc-obor-t"><strong>{{ o.slovo }}</strong><small>{{ o.pozice[:3]|join(' · ') }}</small></span>
+      <span class="kc-kruh" aria-hidden="true">→</span>
+    </a></li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="kc-kontakt" aria-labelledby="kontakt-h">
+  <h2 id="kontakt-h">Napište, kolik lidí potřebujete.</h2>
+  <p>Nabídku pošleme podle vašeho rozpisu. Bez závazku a&nbsp;bez obchodních schůzek, které nikdo nechce.</p>
+  <a href="{{ url('kontakt') }}#poptavka" class="kc-tl">Poptat lidi <span aria-hidden="true">→</span></a>
+  <p class="kc-adresa">{{ site.firma }} · {{ site.kontakt.adresa.ulice }}, {{ site.kontakt.adresa.psc }} {{ site.kontakt.adresa.mesto }}</p>
+</section>
+</main>
+{{ k.prepinac('c') }}
+<script>
+(function(){
+  var f=document.getElementById('rozpis'),out=document.getElementById('kc-celkem');
+  function cislo(id){var v=parseInt(document.getElementById(id).value,10);return isNaN(v)?0:v}
+  function prepocet(){out.textContent=(cislo('s-ranni')+cislo('s-odpoledni')+cislo('s-nocni'))*cislo('s-dny')}
+  f.addEventListener('click',function(e){
+    var b=e.target.closest('button[data-krok]');if(!b)return;
+    var i=b.parentNode.querySelector('input'),v=(parseInt(i.value,10)||0)+parseInt(b.dataset.krok,10);
+    i.value=Math.min(+i.max,Math.max(+i.min,v));prepocet();
+  });
+  f.addEventListener('input',prepocet);prepocet();
+})();
+</script>
+</body>
+</html>

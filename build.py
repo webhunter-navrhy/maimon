@@ -202,6 +202,19 @@ def main():
         with open(vystup, "w", encoding="utf-8") as fh:
             fh.write(kod)
 
+    # koncepty (varianty úvodu): src/koncepty/<x>.html -> dist/koncepty/<x>/index.html
+    kdir = os.path.join(SRC, "koncepty")
+    if os.path.isdir(kdir):
+        for f in sorted(os.listdir(kdir)):
+            if not f.endswith(".html") or f.startswith("_"):
+                continue
+            obr.reset()
+            kod = env.get_template("koncepty/" + f).render()
+            cil = os.path.join(DIST, "koncepty", f[:-5])
+            os.makedirs(cil, exist_ok=True)
+            with open(os.path.join(cil, "index.html"), "w", encoding="utf-8") as fh:
+                fh.write(kod)
+
     # robots, sitemap, CNAME
     navrh = bool(site.get("navrh"))
     with open(os.path.join(DIST, "robots.txt"), "w") as fh:

@@ -1,0 +1,103 @@
+@font-face{font-family:"Archivo";src:url("../fonts/archivo.woff2") format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+:root{--pod:#E8E5E0;--pod2:#F3F1ED;--navy:#0E2236;--ink:#0E1620;--oranz:#F2621D;--sed:#5B636D;--linka:rgba(14,34,54,.14)}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--pod);color:var(--ink);font:400 1rem/1.55 "Archivo",system-ui,sans-serif;font-stretch:100%}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--oranz);outline-offset:3px}
+
+.ka-pruh{display:flex;justify-content:space-between;gap:1rem;background:var(--navy);color:#E8E5E0;font-size:.78rem;letter-spacing:.02em;padding:.55rem clamp(1rem,3vw,2.5rem)}
+.ka-pruh a{text-decoration:none;color:#fff}
+.ka-pruh a:hover{color:var(--oranz)}
+
+.ka-hlava{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:1.1rem clamp(1rem,3vw,2.5rem);position:relative;z-index:5}
+.ka-nav{display:flex;gap:1.75rem;font-size:.9rem}
+.ka-nav a,.ka-nav-odk{text-decoration:none}
+.ka-nav a:hover,.ka-nav-odk:hover{color:var(--oranz)}
+.ka-logo img{width:172px;height:auto}
+.ka-akce{display:flex;justify-content:flex-end;align-items:center;gap:1.5rem;font-size:.9rem}
+.ka-tl{display:inline-flex;align-items:center;gap:.6rem;background:var(--navy);color:#fff;text-decoration:none;font-weight:500;padding:.8rem 1.2rem;border-radius:4px;transition:background .2s}
+.ka-tl:hover{background:var(--oranz)}
+
+/* HERO: obří slovo + vozík přes písmena (předloha STANQ) */
+.ka-hero{position:relative;min-height:calc(100svh - 120px);max-height:980px;padding:clamp(1.5rem,4vw,3rem) clamp(1rem,3vw,2.5rem) 2.5rem;display:grid;grid-template-rows:auto 1fr auto;overflow:clip}
+.ka-h{margin:0;font-weight:inherit;display:contents}
+.ka-h-mala{grid-row:1;font-size:.8rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase;padding-bottom:.9rem;border-bottom:2px solid var(--ink);justify-self:start}
+.ka-h-velka{grid-row:2;align-self:center;display:block;width:100%;text-align:center;text-transform:uppercase;font-weight:640;font-stretch:108%;font-size:clamp(5rem,23.2vw,24rem);line-height:.8;letter-spacing:-.035em;color:var(--navy);margin-top:.12em;position:relative;z-index:1}
+.ka-vozik{position:absolute;z-index:2;left:50%;bottom:0;width:min(31vw,450px);transform:translateX(-42%);pointer-events:none}
+.ka-vozik img{width:100%;filter:drop-shadow(0 30px 30px rgba(14,22,32,.18))}
+.ka-obory-kratce{position:absolute;right:clamp(1rem,3vw,2.5rem);top:clamp(1.5rem,4vw,3rem);margin:0;text-align:right;font-size:.8rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase;line-height:1.9}
+.ka-hero-pata{grid-row:3;display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;position:relative;z-index:3}
+.ka-perex{max-width:30ch;margin:0;font-size:1.05rem;line-height:1.5}
+.ka-tlacitka{display:flex;flex-direction:column;align-items:flex-end;gap:1rem}
+.ka-tl-velke{padding:1.05rem 1.5rem;font-size:1rem;background:var(--oranz)}
+.ka-tl-velke:hover{background:var(--navy)}
+.ka-podtrz{font-size:.92rem;text-underline-offset:.3em}
+
+/* PRUH OBORŮ (STANQ: tmavý pás kategorií) */
+.ka-obory{background:var(--navy);color:#fff}
+.ka-obory ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr)}
+.ka-obory li+li{border-left:1px solid rgba(255,255,255,.14)}
+.ka-obory a{display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto;column-gap:1rem;padding:1.6rem 1.4rem;text-decoration:none;height:100%;transition:background .25s}
+.ka-obory a:hover{background:#16314c}
+.ka-obor-foto{grid-row:1/3;width:84px;height:84px;border-radius:4px;overflow:hidden}
+.ka-obor-foto img{width:100%;height:100%;object-fit:cover}
+.ka-obor-t{display:flex;flex-direction:column;gap:.25rem;align-self:center}
+.ka-obor-t strong{font-weight:600;font-size:1.15rem;font-stretch:104%}
+.ka-obor-t small{font-size:.8rem;color:#A9B3BF;line-height:1.35}
+.ka-sipka{grid-column:2;font-size:1.2rem;color:var(--oranz);transition:transform .25s}
+.ka-obory a:hover .ka-sipka{transform:translateX(6px)}
+
+/* FORMY (ASC: nadpis vlevo, vysoké karty s fotkou) */
+.ka-formy{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.1fr);gap:clamp(2rem,4vw,4rem);padding:clamp(5rem,9vw,8rem) clamp(1rem,3vw,2.5rem);background:var(--pod2)}
+.ka-formy-hlava h2{margin:0 0 1.2rem;font-weight:620;font-stretch:104%;text-transform:uppercase;font-size:clamp(2rem,3.6vw,3.4rem);line-height:.98;letter-spacing:-.02em;color:var(--navy)}
+.ka-formy-hlava p{margin:0 0 2rem;max-width:34ch;color:var(--sed)}
+.ka-tl-obrys{display:inline-flex;gap:.6rem;padding:.8rem 1.1rem;border:1.5px solid var(--navy);border-radius:4px;text-decoration:none;font-weight:500;font-size:.92rem}
+.ka-tl-obrys:hover{background:var(--navy);color:#fff}
+.ka-karty{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.ka-karta{position:relative;background:#fff;border:1px solid var(--linka);border-radius:6px;display:flex;flex-direction:column;overflow:hidden}
+.ka-karta-t{padding:1.5rem 1.4rem 1.2rem}
+.ka-karta h3{margin:0 0 .7rem;font-weight:600;font-size:1.3rem;line-height:1.15;color:var(--navy)}
+.ka-karta p{margin:0;font-size:.9rem;color:var(--sed)}
+.ka-karta-foto{margin-top:auto;aspect-ratio:4/3.4;overflow:hidden}
+.ka-karta-foto img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.ka-karta:hover .ka-karta-foto img{transform:scale(1.04)}
+.ka-karta-odk{position:absolute;right:1rem;bottom:1rem;width:46px;height:46px;border-radius:50%;background:var(--oranz);color:#fff;display:grid;place-items:center;text-decoration:none;font-size:1.15rem}
+.ka-karta-odk::after{content:"";position:absolute;inset:-100vh -100vw;display:none}
+
+/* přepínač variant */
+.kv-prep{position:fixed;left:50%;transform:translateX(-50%);bottom:1rem;z-index:50;display:flex;align-items:center;gap:.25rem;background:rgba(14,34,54,.92);color:#fff;border-radius:999px;padding:.3rem .35rem .3rem .9rem;font:500 .78rem/1 system-ui,sans-serif;backdrop-filter:blur(8px)}
+.kv-prep span{margin-right:.35rem;opacity:.7}
+.kv-prep a{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;text-decoration:none;color:#fff}
+.kv-prep a[aria-current]{background:#F2621D}
+
+@media (max-width:1100px){
+  .ka-obory ul{grid-template-columns:repeat(3,1fr)}
+  .ka-obory li:nth-child(4){border-left:0}
+  .ka-obory li:nth-child(n+4){border-top:1px solid rgba(255,255,255,.14)}
+  .ka-formy{grid-template-columns:1fr}
+}
+@media (max-width:820px){
+  .ka-nav,.ka-nav-odk{display:none}
+  .ka-hlava{grid-template-columns:auto 1fr}
+  .ka-logo img{width:140px}
+  .ka-pruh span{display:none}
+  .ka-pruh{justify-content:flex-end}
+  .ka-hero{min-height:0;max-height:none;padding-bottom:2rem;grid-template-rows:auto auto auto auto}
+  .ka-h-velka{font-size:24.5vw;margin:.5em 0 0}
+  .ka-vozik{position:relative;grid-row:3;left:auto;bottom:auto;transform:none;width:78%;margin:-30vw auto 0}
+  .ka-obory-kratce{display:none}
+  .ka-hero-pata{grid-row:4;flex-direction:column;align-items:stretch;margin-top:1.5rem}
+  .ka-tlacitka{align-items:stretch}
+  .ka-tl-velke{justify-content:center}
+  .ka-podtrz{text-align:center}
+  .ka-obory ul{grid-template-columns:1fr}
+  .kv-prep{position:static;transform:none;justify-content:center;border-radius:0;padding:.6rem}
+  .ka-obory li+li{border-left:0;border-top:1px solid rgba(255,255,255,.14)}
+  .ka-obory a{padding:1rem}
+  .ka-obor-foto{width:64px;height:64px}
+  .ka-karty{grid-template-columns:1fr}
+  .ka-karta-foto{aspect-ratio:16/10}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}

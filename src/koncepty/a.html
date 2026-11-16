@@ -1,0 +1,65 @@
+{% import "koncepty/_spol.html" as k %}<!doctype html>
+<html lang="cs">
+<head>{{ k.hlava('Varianta A', 'a', 'archivo') }}</head>
+<body class="ka">
+<div class="ka-pruh">
+  <span>Agentura práce pro výrobu, sklady a&nbsp;logistiku · Liberec</span>
+  <a href="{{ url('kontakt') }}#uchazeci">Hledáte práci? <span aria-hidden="true">→</span></a>
+</div>
+<header class="ka-hlava">
+  <nav class="ka-nav" aria-label="Hlavní">{% for n in site.nav[:4] %}<a href="{{ url(n.href) }}">{{ n.text }}</a>{% endfor %}</nav>
+  <a class="ka-logo" href="{{ url('koncepty/a') }}"><img src="{{ base }}brand/c-light.svg" alt="Maimon – agentura práce" width="172" height="57"></a>
+  <div class="ka-akce"><a href="{{ url('kontakt') }}" class="ka-nav-odk">Kontakt</a><a href="#formy" class="ka-tl">Poptat lidi</a></div>
+</header>
+
+<main>
+<section class="ka-hero">
+  <h1 class="ka-h"><span class="ka-h-mala">Lidi na</span><span class="ka-h-velka">Směnu</span></h1>
+  <picture class="ka-vozik">
+    <img src="{{ base }}koncepty/vozik-1200.webp" srcset="{{ base }}koncepty/vozik-700.webp 700w, {{ base }}koncepty/vozik-1200.webp 1200w" sizes="(min-width: 900px) 40vw, 80vw" width="1200" height="1494" alt="Řidič vysokozdvižného vozíku v reflexní vestě" fetchpriority="high">
+  </picture>
+  <p class="ka-obory-kratce" aria-hidden="true">Výroba<br>Sklady<br>Logistika</p>
+  <div class="ka-hero-pata">
+    <p class="ka-perex">Agentura práce pro firmy z&nbsp;výroby, skladů a&nbsp;logistiky. Napíšete, kolik lidí a&nbsp;na které směny chybí, my je najdeme, zaměstnáme a&nbsp;pošleme k&nbsp;vám.</p>
+    <div class="ka-tlacitka">
+      <a href="{{ url('') }}#rozpis" class="ka-tl ka-tl-velke">Vyplnit rozpis směn <span aria-hidden="true">→</span></a>
+      <a href="{{ url('spoluprace') }}" class="ka-podtrz">Jak spolupráce funguje</a>
+    </div>
+  </div>
+</section>
+
+<section class="ka-obory" aria-label="Kam lidi posíláme">
+  <ul>
+    {% for o in data.obory %}
+    <li><a href="{{ url('obory') }}#{{ o.id }}">
+      <span class="ka-obor-foto">{{ img(o.foto, '', sizes='180px') }}</span>
+      <span class="ka-obor-t"><strong>{{ o.slovo }}</strong><small>{{ o.pozice[:2]|join(', ') }}</small></span>
+      <span class="ka-sipka" aria-hidden="true">→</span>
+    </a></li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="ka-formy" id="formy" aria-labelledby="formy-h">
+  <div class="ka-formy-hlava">
+    <h2 id="formy-h">Tři způsoby, jak vám lidi doplníme</h2>
+    <p>Vyberte podle toho, jestli lidi potřebujete na čas, natrvalo, nebo jen na pár týdnů v&nbsp;roce.</p>
+    <a href="{{ url('spoluprace') }}" class="ka-tl-obrys">Jak spolupráce funguje <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="ka-karty">
+    {% for f in data.formy %}
+    <article class="ka-karta">
+      <div class="ka-karta-t">
+        <h3>{{ f.nazev }}</h3>
+        <p>{{ f.veta }}</p>
+      </div>
+      <div class="ka-karta-foto">{{ img(f.foto, f.alt, sizes='(min-width: 1100px) 22vw, 90vw') }}</div>
+      <a href="{{ url('spoluprace') }}#{{ f.id }}" class="ka-karta-odk" aria-label="{{ f.nazev }} – podrobnosti"><span aria-hidden="true">→</span></a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+</main>
+{{ k.prepinac('a') }}
+</body>
+</html>

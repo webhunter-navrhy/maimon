@@ -1,0 +1,61 @@
+{% import "koncepty/_spol.html" as k %}<!doctype html>
+<html lang="cs">
+<head>{{ k.hlava('Varianta B', 'b', 'schibsted') }}</head>
+<body class="kb">
+<main>
+<section class="kb-hero">
+  <div class="kb-m" aria-hidden="true">{% set fot = ['montaz-elektro', 'vozikar', 'sklad-porada', 'svarec', 'tym-linka', 'potraviny-linka', 'retrak', 'sklo-vesta', 'montaz-oranzova', 'brouseni', 'soustruh', 'ohranovacka', 'rampy'] %}{% set ns = namespace(i=0) %}{% for r in ['#...#','##.##','#.#.#','#...#','#...#'] %}{% for c in r %}{% if c == '#' %}<span class="kb-bunka">{{ img(fot[ns.i] ~ '.jpg', '', sizes='(min-width: 820px) 140px, 25vw') }}</span>{% set ns.i = ns.i + 1 %}{% else %}<span></span>{% endif %}{% endfor %}{% endfor %}</div>
+  <header class="kb-hlava">
+    <a class="kb-logo" href="{{ url('koncepty/b') }}"><img src="{{ base }}brand/c-signal.svg" alt="Maimon – agentura práce" width="172" height="57"></a>
+    <nav class="kb-nav" aria-label="Hlavní">{% for n in site.nav[:4] %}<a href="{{ url(n.href) }}">{{ n.text }}</a>{% endfor %}<a href="{{ url('kontakt') }}">Kontakt</a></nav>
+    <a href="#kontakt" class="kb-tl kb-tl-navy kb-tl-mala">Poptat lidi</a>
+  </header>
+  <div class="kb-hero-in">
+    <p class="kb-kde">Agentura práce · Liberec</p>
+    <h1 class="kb-h">Lidi na směnu.</h1>
+    <p class="kb-perex">Agentura práce pro firmy z&nbsp;výroby, skladů a&nbsp;logistiky. Napíšete, kolik lidí a&nbsp;na které směny chybí, my je najdeme, zaměstnáme a&nbsp;pošleme k&nbsp;vám.</p>
+    <div class="kb-tlacitka">
+      <a href="{{ url('') }}#rozpis" class="kb-tl kb-tl-navy">Vyplnit rozpis směn <span aria-hidden="true">→</span></a>
+      <a href="{{ url('spoluprace') }}" class="kb-odkaz">Jak spolupráce funguje</a>
+    </div>
+  </div>
+  <ul class="kb-formy" aria-label="Co nabízíme">
+    {% for f in data.formy %}
+    <li><a href="{{ url('spoluprace') }}#{{ f.id }}"><strong>{{ f.nazev }}</strong><span>{% if loop.index == 1 %}Lidé jsou naši zaměstnanci, pracují u&nbsp;vás.{% elif loop.index == 2 %}Najdeme lidi, které zaměstnáte vy.{% else %}Sezóna, zakázka, inventura.{% endif %}</span></a></li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="kb-jak" aria-labelledby="jak-h">
+  <div class="kb-jak-foto">{{ img('sklad-nastup.jpg', 'Pracovníci v reflexních vestách procházejí uličkou skladu', sizes='(min-width: 900px) 52vw, 100vw') }}</div>
+  <div class="kb-jak-text">
+    <h2 id="jak-h">Nezačínáme inzerátem, ale vaším rozpisem.</h2>
+    <p>Chceme vědět, kolik lidí chybí, na které směny a&nbsp;od kdy. Podle toho hledáme, prověřujeme a&nbsp;posíláme lidi, kteří splní zadání.</p>
+    <p>Lidem, které k&nbsp;vám pošleme, říkáme na rovinu, co je čeká: práci, směny, mzdu i&nbsp;dojíždění. Kdo ví, do čeho jde, vydrží déle.</p>
+    <a href="{{ url('o-nas') }}" class="kb-odkaz kb-odkaz-tm">O nás <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<section class="kb-rozpis" aria-labelledby="rozpis-h">
+  <div class="kb-dlazdice">
+    {{ k.pixm('#F58C5A', 'none', 'kb-m2') }}
+    <h2 id="rozpis-h">Kolik lidí chybí ve vašem rozpisu?</h2>
+    <p>Vyplňte směny jako na tabuli u&nbsp;vedoucího. Z&nbsp;rozpisu poskládáme poptávku, nic nepřepisujete.</p>
+    <ul class="kb-smeny"><li>Ranní <small>6–14</small></li><li>Odpolední <small>14–22</small></li><li>Noční <small>22–6</small></li></ul>
+    <a href="{{ url('') }}#rozpis" class="kb-tl kb-tl-navy">Vyplnit rozpis směn <span aria-hidden="true">→</span></a>
+  </div>
+  <ul class="kb-obory" aria-label="Obory">
+    {% for o in data.obory %}<li><a href="{{ url('obory') }}#{{ o.id }}">{{ img(o.foto, '', sizes='96px') }}<span><strong>{{ o.slovo }}</strong><small>{{ o.pozice[:2]|join(', ') }}</small></span><span class="kb-sip" aria-hidden="true">→</span></a></li>{% endfor %}
+  </ul>
+</section>
+
+<section class="kb-kontakt" id="kontakt" aria-labelledby="kontakt-h">
+  <h2 id="kontakt-h">Napište, kolik lidí potřebujete.</h2>
+  <p>Nabídku pošleme podle vašeho rozpisu. Bez závazku a&nbsp;bez obchodních schůzek, které nikdo nechce.</p>
+  <a href="{{ url('kontakt') }}#poptavka" class="kb-tl kb-tl-obrys">Poptat lidi <span aria-hidden="true">→</span></a>
+  <p class="kb-adresa">{{ site.firma }} · {{ site.kontakt.adresa.ulice }}, {{ site.kontakt.adresa.psc }} {{ site.kontakt.adresa.mesto }}</p>
+</section>
+</main>
+{{ k.prepinac('b') }}
+</body>
+</html>

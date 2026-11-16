@@ -1,0 +1,24 @@
+{% macro pixm(on, off='none', cls='') -%}
+<svg class="{{ cls }}" viewBox="0 0 500 500" aria-hidden="true" focusable="false">{% for r in ['#...#','##.##','#.#.#','#...#','#...#'] %}{% set y = loop.index0 %}{% for c in r %}{% if c == '#' or off != 'none' %}<rect x="{{ loop.index0 * 100 + 5 }}" y="{{ y * 100 + 5 }}" width="90" height="90" rx="21" fill="{{ on if c == '#' else off }}"/>{% endif %}{% endfor %}{% endfor %}</svg>
+{%- endmacro %}
+
+{% macro hlava(nazev, css, font) -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>{{ nazev }} – Maimon, agentura práce</title>
+<meta name="description" content="{{ site.popis }}">
+<link rel="icon" href="{{ base }}brand/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="{{ asset('fonts/' ~ font ~ '.woff2') }}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ asset('koncepty/' ~ css ~ '.css') }}">
+{%- endmacro %}
+
+{% macro prepinac(aktivni) -%}
+<nav class="kv-prep" aria-label="Varianty úvodu">
+  <span>Varianta</span>{% for v in ['a','b','c'] %}<a href="{{ url('koncepty/' ~ v) }}"{% if v == aktivni %} aria-current="page"{% endif %}>{{ v|upper }}</a>{% endfor %}
+</nav>
+{%- endmacro %}
+
+{% macro font_face(rodina, soubor, osy='') -%}
+@font-face{font-family:"{{ rodina }}";src:url("{{ asset('fonts/' ~ soubor ~ '.woff2') }}") format("woff2");font-weight:100 900;{{ osy }}font-display:swap}
+{%- endmacro %}
