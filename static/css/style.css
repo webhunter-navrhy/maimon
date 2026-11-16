@@ -635,3 +635,5 @@ main > .cta-pas:last-child { margin-bottom: var(--sekce); }
 .dva-sl > div > .nadpis + .perex { margin-top: 1.2rem; }
 @media (max-width: 820px) { .stranka-foto img { aspect-ratio: 4 / 3; } }
 @media (max-width: 640px) { .tym-foto.doplnime { aspect-ratio: 3 / 2; } }
+
+.logo { min-height: 44px; }
