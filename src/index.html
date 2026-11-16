@@ -8,23 +8,24 @@
     {{ img('sklad-nastup.jpg', 'Pracovníci v reflexních vestách procházejí uličkou skladu', sizes='100vw', cls='hero-img', eager=True) }}
   </div>
   <div class="hero-in">
-    <h1 class="hero-h">Lidi na <mark>směnu.</mark></h1>
-    <div class="hero-pata">
+    <div class="hero-text">
+      <p class="hero-kde"><span class="hero-tecka" aria-hidden="true"></span>Agentura práce · Liberec</p>
+      <h1 class="hero-h">Lidi na <mark>směnu.</mark></h1>
       <p class="hero-nabidka">Agentura práce pro firmy z&nbsp;výroby, skladů a&nbsp;logistiky. Napíšete, kolik lidí a&nbsp;na které směny chybí, my je najdeme, zaměstnáme a&nbsp;pošleme k&nbsp;vám.</p>
       <div class="hero-tl">
         <a href="#rozpis" class="tl tl-oranz">Vyplnit rozpis směn <span aria-hidden="true">→</span></a>
         <a href="{{ url('spoluprace') }}" class="tl tl-obrys-svetly">Jak spolupráce funguje</a>
       </div>
     </div>
+    <aside class="pruh-nabidka" aria-label="Co nabízíme">
+      <p class="pruh-tit">Co nabízíme</p>
+      <ul>
+        {% for f in data.formy %}
+        <li><a href="{{ url('spoluprace') }}#{{ f.id }}"><span class="pruh-t"><strong>{{ f.nazev }}</strong> <span>{% if loop.index == 1 %}lidé jsou naši zaměstnanci, pracují u&nbsp;vás{% elif loop.index == 2 %}najdeme lidi, které zaměstnáte vy{% else %}sezóna, zakázka, inventura{% endif %}</span></span><span class="kruh" aria-hidden="true">→</span></a></li>
+        {% endfor %}
+      </ul>
+    </aside>
   </div>
-</section>
-
-<section class="pruh-nabidka" aria-label="Co nabízíme">
-  <ul>
-    {% for f in data.formy %}
-    <li><a href="{{ url('spoluprace') }}#{{ f.id }}"><strong>{{ f.nazev }}</strong> <span>{% if loop.index == 1 %}lidé jsou naši zaměstnanci, pracují u&nbsp;vás{% elif loop.index == 2 %}najdeme lidi, které zaměstnáte vy{% else %}sezóna, zakázka, inventura{% endif %}</span></a></li>
-    {% endfor %}
-  </ul>
 </section>
 
 {% include "_rozpis.html" %}
@@ -35,9 +36,9 @@
     <p class="perex">Vyberte podle toho, jestli lidi potřebujete na čas, natrvalo, nebo jen na pár týdnů v&nbsp;roce.</p>
   </div>
   {% for f in data.formy %}
-  <article class="forma{% if loop.index is even %} forma-obr{% endif %}{% if f.get("na_vysku") %} forma-vyska{% endif %}" id="{{ f.id }}">
-    <div class="forma-foto r">{{ img(f.foto, f.alt, sizes='(min-width: 900px) 58vw, 100vw') }}</div>
-    <div class="forma-text r">
+  <article class="forma r" id="{{ f.id }}">
+    <div class="forma-foto">{{ img(f.foto, f.alt, sizes='(min-width: 1100px) 30vw, (min-width: 700px) 50vw, 100vw') }}<a href="{{ url('spoluprace') }}#{{ f.id }}" class="kruh forma-kruh" aria-label="{{ f.nazev }} – podrobnosti">→</a></div>
+    <div class="forma-text">
       <h3>{{ f.nazev }}</h3>
       <p class="forma-veta">{{ f.veta }}</p>
       <p class="stitek">Hodí se, když</p>
@@ -60,7 +61,7 @@
         <li><a href="{{ url('obory') }}#{{ o.id }}" class="obor{% if loop.first %} on{% endif %}" data-i="{{ loop.index0 }}">
           <span class="obor-slovo">{{ o.slovo }}</span>
           <span class="obor-pozice">{{ o.pozice[:3]|join(' · ') }}</span>
-          <span class="obor-sipka" aria-hidden="true">→</span>
+          <span class="obor-sipka kruh" aria-hidden="true">→</span>
           <span class="obor-mobil-foto">{{ img(o.foto, '', sizes='100vw') }}</span>
         </a></li>
         {% endfor %}
@@ -73,6 +74,11 @@
 </section>
 
 <section class="kdo" aria-labelledby="kdo-h">
+  <div class="kdo-foto r">
+    {{ img('sklo-vesta.jpg', 'Pracovník v reflexní vestě při manipulaci s materiálem', sizes='(min-width: 1000px) 40vw, 100vw') }}
+    <p class="kdo-znak"><strong>Od 2024</strong> agentura práce v&nbsp;Liberci</p>
+  </div>
+  <div class="kdo-obsah">
   <div class="kdo-hlava">
     <h2 id="kdo-h" class="nadpis">Kdo co řeší</h2>
     <p class="perex">U&nbsp;agenturního zaměstnávání je dobré mít od začátku jasno. Vy vedete práci, my řešíme všechno kolem zaměstnance.</p>
@@ -89,6 +95,7 @@
     {% for k in data.kdo if k.vy and k.my %}
     <div class="kdo-spolu r"><span class="stitek">Společně{% if k.get("pozn") %}, {{ k.pozn }}{% endif %}</span><p>{{ k.co }}</p></div>
     {% endfor %}
+  </div>
   </div>
 </section>
 
@@ -132,6 +139,7 @@
 <section class="kontakt-blok" id="poptavka" aria-labelledby="poptavka-h">
   <div class="kontakt-in">
     <div class="kontakt-text">
+      <div class="kontakt-foto" aria-hidden="true">{{ img('rampy.jpg', '', sizes='(min-width: 1000px) 45vw, 100vw') }}</div>
       <h2 id="poptavka-h" class="nadpis-velky">Napište, kolik lidí potřebujete.</h2>
       <p class="perex">Nabídku pošleme podle vašeho rozpisu. Bez závazku a&nbsp;bez obchodních schůzek, které nikdo nechce.</p>
       <dl class="kontakt-udaje">

@@ -18,14 +18,15 @@
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">{% endif %}
 <link rel="icon" href="{{ base }}brand/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="{{ base }}fonts/funnel.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="{{ base }}fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ base }}fonts/jakarta.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ base }}fonts/jakarta-ext.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 {% block head %}{% endblock %}
 {% if jsonld %}<script type="application/ld+json">{{ jsonld|safe }}</script>{% endif %}
 </head>
 <body class="{% block telo %}{% endblock %}">
 <a class="skip" href="#obsah">Přeskočit na obsah</a>
+<div class="lista"><div class="lista-in"><span>Agentura práce pro výrobu, sklady a logistiku</span><span class="lista-prava">Sokolská 1365, Liberec <a href="{{ url('kontakt') }}#poptavka">Poptat lidi <span aria-hidden="true">→</span></a></span></div></div>
 <header class="hlavicka">
   <div class="hlavicka-in">
     <a href="{{ url('') }}" class="logo" aria-label="{{ site.nazev }} – úvod"><img src="{{ base }}{{ site.logo }}" alt="Maimon – agentura práce" width="145" height="48"></a>
@@ -70,6 +71,5 @@
   </div>
 </footer>
 <script src="{{ asset('js/main.js') }}" defer></script>
-<nav aria-label="Varianty nového úvodu" style="position:fixed;left:50%;transform:translateX(-50%);bottom:1rem;z-index:999;display:flex;align-items:center;gap:.3rem;background:#0E2236;color:#fff;border-radius:999px;padding:.35rem .4rem .35rem 1rem;font:500 .85rem/1 system-ui,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.25)"><span style="margin-right:.4rem;opacity:.8;white-space:nowrap">Varianty úvodu</span>{% for v in ['a','b','c'] %}<a href="{{ url('koncepty/' ~ v) }}" style="display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:#F2621D;color:#fff;text-decoration:none">{{ v|upper }}</a>{% endfor %}</nav>
 </body>
 </html>
