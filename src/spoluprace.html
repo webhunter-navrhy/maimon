@@ -1,0 +1,66 @@
+{% extends "_base.html" %}
+{% set titulek = "Spolupráce – Maimon, agentura práce" %}
+{% set popis = "Dočasné přidělení, nábor do kmene a pokrytí špičky. Jak spolupráce s agenturou práce Maimon probíhá od poptávky po první směnu." %}
+{% set cesta = "spoluprace/" %}
+{% block telo %}podstranka{% endblock %}
+{% block obsah %}
+<header class="stranka-hlava">
+  <h1 class="stranka-h">Spolupráce</h1>
+  <p class="perex">Tři způsoby, jak vám doplníme lidi, a&nbsp;čtyři kroky od první zprávy po první odpracovanou směnu.</p>
+</header>
+
+<nav class="skok" aria-label="Formy spolupráce">
+  {% for f in data.formy %}<a href="#{{ f.id }}">{{ f.nazev }}</a>{% endfor %}
+</nav>
+
+<section class="formy formy-podstranka" aria-label="Formy spolupráce">
+  {% for f in data.formy %}
+  <article class="forma{% if loop.index is even %} forma-obr{% endif %}{% if f.get("na_vysku") %} forma-vyska{% endif %}" id="{{ f.id }}">
+    <div class="forma-foto r">{{ img(f.foto, f.alt, sizes='(min-width: 900px) 55vw, 100vw') }}</div>
+    <div class="forma-text r">
+      <h2 class="forma-h2">{{ f.nazev }}</h2>
+      <p class="forma-veta">{{ f.veta }}</p>
+      <p class="stitek">Hodí se, když</p>
+      <ul class="fajfky">{% for h in f.hodi %}<li>{{ h }}</li>{% endfor %}</ul>
+      <p class="forma-pravo">{{ f.pravo }}</p>
+    </div>
+  </article>
+  {% endfor %}
+</section>
+
+<section class="kroky" aria-labelledby="kroky-h">
+  <div class="sekce-hlava">
+    <h2 id="kroky-h" class="nadpis">Od poptávky k&nbsp;první směně</h2>
+  </div>
+  <ol class="kroky-osa">
+    {% for k in data.kroky %}
+    <li class="krok r"><span class="krok-c">{{ loop.index }}</span><h3>{{ k.nazev }}</h3><p>{{ k.text }}</p></li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="blok dva-sl" aria-labelledby="potreba-h">
+  <div>
+    <h2 id="potreba-h" class="nadpis">Co od vás potřebujeme</h2>
+    <p class="perex">Čím přesnější zadání, tím rychleji pošleme nabídku a&nbsp;tím líp lidi sednou.</p>
+  </div>
+  <ul class="checklist">
+    <li class="r"><strong>Pozice a&nbsp;náplň práce</strong> co budou lidé dělat, u&nbsp;jakého stroje nebo v&nbsp;jaké části skladu</li>
+    <li class="r"><strong>Počet lidí a&nbsp;směny</strong> kolik na kterou směnu a&nbsp;ve které dny, nejrychleji přes rozpis směn</li>
+    <li class="r"><strong>Místo výkonu práce</strong> adresa provozu a&nbsp;jak se tam lidé dostanou</li>
+    <li class="r"><strong>Mzda a&nbsp;příplatky na pozici</strong> přidělení lidé musí mít stejné podmínky jako vaši zaměstnanci</li>
+    <li class="r"><strong>Požadavky</strong> průkaz VZV, zdravotní průkaz, svářečské zkoušky, směnnost, fyzická náročnost</li>
+    <li class="r"><strong>Od kdy a&nbsp;na jak dlouho</strong> termín nástupu a&nbsp;předpokládaná délka spolupráce</li>
+  </ul>
+</section>
+
+<section class="cta-pas" aria-labelledby="cta-h">
+  <div class="cta-pas-in">
+    <h2 id="cta-h">Zadání sestavíte za minutu.</h2>
+    <div class="hero-tl">
+      <a href="{{ url('') }}#rozpis" class="tl tl-ink">Vyplnit rozpis směn <span aria-hidden="true">→</span></a>
+      <a href="{{ url('kontakt') }}#poptavka" class="tl tl-obrys">Napsat poptávku</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

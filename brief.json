@@ -1,0 +1,29 @@
+{
+  "firma": "Maimon Brand s.r.o.",
+  "pracovni_nazev_znacky": "Maimon (předpoklad – klient název agentury neuvedl)",
+  "obor": "agentura práce – B2B (agenturní zaměstnávání / nábor pro firmy)",
+  "mesto": "Liberec",
+  "ico": "21152331",
+  "zdroj_poptavky": "WhatsApp přes Rafaela 16. 11. 2026 (klient Molver Group / Rox): „změna plánu, potřebuju udělat stránky na agenturu práce… zaplatit hned, i doménu“",
+  "cilova_skupina": "firmy – výroba, sklady, logistika (HR, vedoucí výroby, provozní). Nabídky práce pro uchazeče nejsou nutné.",
+  "ton": "věcný, rychlý, partnerský; bez korporátních frází",
+  "konkurence_od_klienta": ["rapasol.cz","irg-cz.cz","jobleader.cz","manpower.cz","rsagenturaprace.cz","grafton.cz/cs","adecco.com/cs-cz"],
+  "brand": {"logo": "neexistuje – součást zakázky (3 návrhy v /znacka/)", "barvy": "neexistují – navrženo: papír #F1EFE8, inkoust #15171A, signální limetka #D2F53C", "pismo": "navrženo Bricolage Grotesque + Geist"},
+  "fotky": "klient žádné nedodal; použity ilustrační fotky Unsplash (foto/zdroje.txt), v patičce označeny",
+  "fakta": [
+    {"fakt": "obchodní jméno Maimon Brand s.r.o.", "zdroj": "ARES 21152331"},
+    {"fakt": "sídlo Sokolská 1365, Liberec I-Staré Město, 460 01 Liberec", "zdroj": "ARES"},
+    {"fakt": "vznik 24. 1. 2024", "zdroj": "ARES"},
+    {"fakt": "agentura práce potřebuje povolení ke zprostředkování zaměstnání (GŘ Úřadu práce ČR, MPSV)", "zdroj": "zákon 435/2004 Sb., § 14 a násl."}
+  ],
+  "chybi": [
+    "název agentury (pracujeme s „Maimon“) a výběr loga A/B/C",
+    "číslo povolení ke zprostředkování zaměstnání (GŘ ÚP) – musí být na webu",
+    "telefon a e-mail pro firmy, kontaktní osoba",
+    "doména (klient chce rovnou zaplatit)",
+    "obory a regiony, kam lidi dodáváte (návrh: výroba, sklady, potraviny, kovo, VZV – Liberecký kraj a okolí)",
+    "formy spolupráce, které opravdu nabízíte (dočasné přidělení, nábor na HPP, zahraniční pracovníci?)",
+    "skutečné fotky vašich lidí nebo provozů (zatím ilustrační)",
+    "reference / loga firem, pokud smějí být zveřejněny"
+  ]
+}

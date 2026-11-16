@@ -1,0 +1,58 @@
+{
+  "slug": "maimon",
+  "nazev": "Maimon – agentura práce",
+  "url": "https://webhunter-navrhy.github.io/maimon/",
+  "base": "/maimon/",
+  "lang": "cs",
+  "popis": "Agentura práce pro firmy z výroby, skladů a logistiky. Doplníme lidi na směny – dočasné přidělení, nábor do kmene i pokrytí špičky. Sídlo Liberec.",
+  "navrh": true,
+  "domena": "",
+  "og_image": "sklad-nastup.jpg",
+  "logo": "brand/c-light.svg",
+  "theme_color": "#F1EFE8",
+  "typ": "EmploymentAgency",
+  "ico": "21152331",
+  "kontakt": {
+    "email": "",
+    "telefon": "",
+    "osoba": "",
+    "adresa": {
+      "ulice": "Sokolská 1365",
+      "psc": "460 01",
+      "mesto": "Liberec",
+      "zeme": "CZ"
+    }
+  },
+  "oteviraci_doba": [],
+  "sameas": [],
+  "cenove_rozpeti": "",
+  "formular": {
+    "endpoint": "",
+    "demo": true,
+    "predmet": "Poptávka lidí z webu"
+  },
+  "nav": [
+    {
+      "text": "Pro firmy",
+      "href": "pro-firmy"
+    },
+    {
+      "text": "Spolupráce",
+      "href": "spoluprace"
+    },
+    {
+      "text": "Obory",
+      "href": "obory"
+    },
+    {
+      "text": "O nás",
+      "href": "o-nas"
+    },
+    {
+      "text": "Značka",
+      "href": "znacka"
+    }
+  ],
+  "firma": "Maimon Brand s.r.o.",
+  "povoleni": ""
+}

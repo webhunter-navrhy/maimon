@@ -1,0 +1,14 @@
+[
+  {"id": "a", "nazev": "Hlava", "w": 613, "h": 342,
+   "veta": "Samotné slovo maimon. Tečka nad i je hlava člověka a jako jediná svítí limetkou.",
+   "silne": "Nejtišší a nejuniverzálnější varianta, sedí na dokumenty i na smlouvy.",
+   "slabe": "Bez samostatné značky: v malé velikosti zůstane jen m s tečkou."},
+  {"id": "b", "nazev": "Dva lidé", "w": 754, "h": 310,
+   "veta": "M složené ze dvou postav: firma a člověk, kterého k ní posíláme. Agentura je to, co je spojuje.",
+   "silne": "Okamžitě říká, že jde o lidi. Postavy fungují i samostatně jako ikona.",
+   "slabe": "Postavy jsou u personálních agentur častý motiv, odlišení je menší."},
+  {"id": "c", "nazev": "Rozpis", "w": 754, "h": 310, "doporuceni": true,
+   "veta": "M vyplněné v mřížce rozpisu směn 5 × 5. Stejný rozpis firma vyplňuje na webu, když poptává lidi.",
+   "silne": "Logo, web i poptávka mluví jedním jazykem. Mřížka se dá použít jako vzor na vestách, autech i tiskovinách.",
+   "slabe": "Potřebuje kontrast. Na fotce nebo pestrém podkladu ji dáváme na tmavou nebo limetkovou plochu."}
+]

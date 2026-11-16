@@ -1,0 +1,48 @@
+{% extends "_base.html" %}
+{% set titulek = "O nás – Maimon, agentura práce" %}
+{% set popis = "Maimon je agentura práce se sídlem v Liberci. Doplňujeme lidi na směny pro firmy z výroby, skladů a logistiky." %}
+{% set cesta = "o-nas/" %}
+{% block telo %}podstranka{% endblock %}
+{% block obsah %}
+<header class="stranka-hlava">
+  <h1 class="stranka-h">O nás</h1>
+  <p class="perex">Agentura práce z&nbsp;Liberce. Pracujeme jen pro firmy a&nbsp;jen s&nbsp;jednou věcí: aby vám nechyběli lidi na směně.</p>
+</header>
+<div class="stranka-foto r">{{ img('hala-prazdna.jpg', 'Prázdná výrobní hala s jeřábovou dráhou', sizes='100vw', eager=True) }}</div>
+
+<section class="blok dva-sl" aria-labelledby="jak-h">
+  <h2 id="jak-h" class="nadpis">Jak pracujeme</h2>
+  <div class="text-sl">
+    <p>Nezačínáme inzerátem, ale vaším rozpisem. Chceme vědět, kolik lidí chybí, na které směny a&nbsp;od kdy. Podle toho hledáme, prověřujeme a&nbsp;posíláme lidi, kteří splní zadání.</p>
+    <p>Lidem, které k&nbsp;vám pošleme, říkáme na rovinu, co je čeká: práci, směny, mzdu i&nbsp;dojíždění. Kdo ví, do čeho jde, vydrží déle.</p>
+    <p>S&nbsp;vámi chceme mít jednoho člověka na telefonu, který zná váš provoz. <span class="doplnime">jméno kontaktní osoby doplníme</span></p>
+  </div>
+</section>
+
+<section class="blok" aria-labelledby="tym-h">
+  <h2 id="tym-h" class="nadpis">Tým</h2>
+  <div class="tym-mista">
+    <div class="tym-misto r"><span class="tym-foto doplnime">portrét doplníme</span><p><strong>Vedení agentury</strong><br><span class="doplnime">jméno doplníme</span></p></div>
+    <div class="tym-misto r"><span class="tym-foto doplnime">portrét doplníme</span><p><strong>Péče o&nbsp;firmy</strong><br><span class="doplnime">jméno doplníme</span></p></div>
+    <div class="tym-misto r"><span class="tym-foto doplnime">portrét doplníme</span><p><strong>Nábor</strong><br><span class="doplnime">jméno doplníme</span></p></div>
+  </div>
+</section>
+
+<section class="blok dva-sl" aria-labelledby="firma-h">
+  <h2 id="firma-h" class="nadpis">Údaje o&nbsp;firmě</h2>
+  <dl class="udaje-firma">
+    <dt>Obchodní firma</dt><dd>{{ site.firma }}</dd>
+    <dt>IČO</dt><dd>{{ site.ico }}</dd>
+    <dt>Sídlo</dt><dd>{{ site.kontakt.adresa.ulice }}, {{ site.kontakt.adresa.psc }} {{ site.kontakt.adresa.mesto }}</dd>
+    <dt>Vznik</dt><dd>24. 1. 2024 (obchodní rejstřík)</dd>
+    <dt>Povolení</dt><dd>{% if site.povoleni %}{{ site.povoleni }}{% else %}<span class="doplnime">číslo povolení GŘ ÚP doplníme</span>{% endif %}</dd>
+  </dl>
+</section>
+
+<section class="cta-pas" aria-labelledby="cta-h">
+  <div class="cta-pas-in">
+    <h2 id="cta-h">Napište, kde vám lidi chybí.</h2>
+    <div class="hero-tl"><a href="{{ url('kontakt') }}#poptavka" class="tl tl-ink">Poptat lidi <span aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+{% endblock %}

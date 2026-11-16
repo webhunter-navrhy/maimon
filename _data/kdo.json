@@ -1,0 +1,44 @@
+[
+  {
+    "co": "Nábor, výběr a pohovory",
+    "my": true,
+    "vy": false
+  },
+  {
+    "co": "Pracovní smlouva, mzda, odvody a pojištění",
+    "my": true,
+    "vy": false
+  },
+  {
+    "co": "Vstupní lékařská prohlídka",
+    "my": true,
+    "vy": false
+  },
+  {
+    "co": "Náhrada za člověka, který odejde",
+    "my": true,
+    "vy": false
+  },
+  {
+    "co": "Zadávání práce a vedení na směně",
+    "my": false,
+    "vy": true
+  },
+  {
+    "co": "Školení BOZP na pracovišti a ochranné pomůcky",
+    "my": false,
+    "vy": true,
+    "pozn": "pomůcky podle dohody"
+  },
+  {
+    "co": "Potvrzení docházky za měsíc",
+    "my": false,
+    "vy": true
+  },
+  {
+    "co": "Mzdové podmínky ne horší než u vašich zaměstnanců",
+    "my": true,
+    "vy": true,
+    "pozn": "ze zákona"
+  }
+]

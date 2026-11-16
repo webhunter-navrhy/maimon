@@ -1,0 +1,62 @@
+{% extends "_base.html" %}
+{% set titulek = "Pro firmy – Maimon, agentura práce" %}
+{% set popis = "Jak funguje agenturní zaměstnávání pro firmy z výroby a skladů: kdy se vyplatí, co řeší agentura a co vy, právní rámec a časté otázky." %}
+{% set cesta = "pro-firmy/" %}
+{% block telo %}podstranka{% endblock %}
+{% block head %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{% for f in data.faq %}{"@type":"Question","name":{{ f.q|tojson }},"acceptedAnswer":{"@type":"Answer","text":{{ f.a|tojson }}}}{% if not loop.last %},{% endif %}{% endfor %}]}</script>
+{% endblock %}
+{% block obsah %}
+<header class="stranka-hlava">
+  <h1 class="stranka-h">Pro firmy</h1>
+  <p class="perex">Když vám na směně chybí lidi, nepotřebujete další inzerát. Potřebujete, aby v&nbsp;pondělí v&nbsp;šest ráno stáli u&nbsp;linky. Tohle je pro vás.</p>
+</header>
+<div class="stranka-foto r">{{ img('tym-linka.jpg', 'Skupina pracovníků v reflexních vestách u výrobní linky', sizes='100vw', eager=True) }}</div>
+
+<section class="blok dva-sl" aria-labelledby="kdy-h">
+  <h2 id="kdy-h" class="nadpis">Kdy se agentura vyplatí</h2>
+  <div class="text-sl">
+    <p>Agentura dává smysl všude, kde se počet lidí mění rychleji, než stihnete nabírat. Nová zakázka, sezóna, inventura, dovolené nebo nemocnost. Vy řeknete kolik lidí a&nbsp;na které směny, my je najdeme a&nbsp;zaměstnáme.</p>
+    <h3>Nepřidáváte si stavy</h3>
+    <p>Při dočasném přidělení jsou lidé zaměstnanci agentury. Smlouvy, mzdy, odvody, pojištění a&nbsp;lékařské prohlídky jsou na nás. Vy dostanete jednu fakturu za odpracované hodiny.</p>
+    <h3>Pružně nahoru i&nbsp;dolů</h3>
+    <p>Když zakázka skončí, počet lidí snížíme. Podmínky ukončení přidělení máme ve smlouvě od začátku, takže nejsou překvapení.</p>
+    <h3>Náhrada, když někdo odejde</h3>
+    <p>Člověk, který nepřijde nebo nesedne, se stane i&nbsp;při nejlepším výběru. Dáte vědět a&nbsp;hledáme náhradu.</p>
+  </div>
+</section>
+
+<section class="blok" aria-labelledby="ramec-h">
+  <div class="ramec">
+    <h2 id="ramec-h" class="nadpis">Právní rámec v&nbsp;kostce</h2>
+    <dl class="ramec-seznam">
+      <div class="r"><dt>Povolení</dt><dd>Agentura práce potřebuje povolení ke zprostředkování zaměstnání od Generálního ředitelství Úřadu práce ČR (zákon č.&nbsp;435/2004&nbsp;Sb., o&nbsp;zaměstnanosti). <span class="doplnime">číslo našeho povolení doplníme</span></dd></div>
+      <div class="r"><dt>Dohoda o&nbsp;přidělení</dt><dd>Mezi agenturou a&nbsp;vámi se uzavírá dohoda o&nbsp;dočasném přidělení. Určuje pozici, místo, dobu přidělení a&nbsp;mzdové podmínky (§&nbsp;308 zákoníku práce).</dd></div>
+      <div class="r"><dt>Rovné podmínky</dt><dd>Pracovní a&nbsp;mzdové podmínky přidělených lidí nesmí být horší než u&nbsp;vašich srovnatelných zaměstnanců (§&nbsp;309 zákoníku práce).</dd></div>
+      <div class="r"><dt>BOZP na pracovišti</dt><dd>Práci řídíte vy, proto u&nbsp;vás probíhá i&nbsp;školení bezpečnosti práce na konkrétním pracovišti. Ochranné pomůcky domluvíme ve smlouvě.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="blok dva-sl" aria-labelledby="faq-h">
+  <div>
+    <h2 id="faq-h" class="nadpis">Časté otázky</h2>
+    <p class="perex">Co se firmy ptají, než poprvé podepíší smlouvu s&nbsp;agenturou.</p>
+  </div>
+  <div class="faq">
+    {% for f in data.faq %}
+    <details{% if loop.first %} open{% endif %}><summary>{{ f.q }}</summary><p>{{ f.a }}</p></details>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="cta-pas" aria-labelledby="cta-h">
+  <div class="cta-pas-in">
+    <h2 id="cta-h">Kolik lidí vám chybí tento týden?</h2>
+    <div class="hero-tl">
+      <a href="{{ url('') }}#rozpis" class="tl tl-ink">Vyplnit rozpis směn <span aria-hidden="true">→</span></a>
+      <a href="{{ url('kontakt') }}#poptavka" class="tl tl-obrys">Napsat poptávku</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

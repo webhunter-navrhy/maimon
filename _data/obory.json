@@ -1,0 +1,65 @@
+[
+  {
+    "id": "vyroba",
+    "slovo": "Výroba",
+    "foto": "montaz-elektro.jpg",
+    "alt": "Pracovník v limetkovém tričku a ochranných brýlích při montáži",
+    "text": "Montážní a výrobní linky, kompletace, obsluha strojů, kontrola kvality.",
+    "pozice": [
+      "operátor/ka výroby",
+      "montážní pracovník",
+      "seřizovač",
+      "kontrolor kvality"
+    ]
+  },
+  {
+    "id": "sklad",
+    "slovo": "Sklad",
+    "foto": "retrak.jpg",
+    "alt": "Retrakový vozík s paletou mezi regály skladu",
+    "text": "Příjem, vychystávání, balení a expedice. Inventury i sezónní nárůst objednávek.",
+    "pozice": [
+      "skladník/skladnice",
+      "picker",
+      "balič/ka",
+      "expedient"
+    ]
+  },
+  {
+    "id": "vzv",
+    "slovo": "VZV",
+    "foto": "vozikar.jpg",
+    "alt": "Řidič vysokozdvižného vozíku v reflexní vestě",
+    "text": "Řidiči vysokozdvižných a retrakových vozíků s platným průkazem.",
+    "pozice": [
+      "řidič VZV",
+      "řidič retraku",
+      "manipulant"
+    ]
+  },
+  {
+    "id": "potraviny",
+    "slovo": "Potraviny",
+    "foto": "potraviny-linka.jpg",
+    "alt": "Pracovníci u potravinářské linky",
+    "text": "Linky, balení a kompletace v potravinářství, se zdravotním průkazem.",
+    "pozice": [
+      "pracovník/ce linky",
+      "balič/ka",
+      "pomocná síla"
+    ]
+  },
+  {
+    "id": "kovo",
+    "slovo": "Kovo",
+    "foto": "svarec.jpg",
+    "alt": "Svářeč při práci, jiskry ze svařování",
+    "text": "Svářeči, zámečníci, obsluha CNC a soustruhů, broušení a povrchové úpravy.",
+    "pozice": [
+      "svářeč",
+      "zámečník",
+      "obsluha CNC",
+      "brusič"
+    ]
+  }
+]

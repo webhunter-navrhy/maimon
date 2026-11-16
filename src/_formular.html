@@ -1,0 +1,23 @@
+{# Poptávkový formulář pro firmy. Rozpis směn se předvyplní do pole „rozpis“. #}
+<form class="formular" id="poptavka-form" method="post" {% if site.formular.endpoint and not site.formular.demo %}action="{{ site.formular.endpoint }}"{% endif %} data-endpoint="{{ site.formular.endpoint }}" data-demo="{{ 1 if site.formular.demo or not site.formular.endpoint else 0 }}">
+  <div class="pole-rozpis" hidden>
+    <span class="pole-stitek">Z rozpisu směn</span>
+    <p data-rozpis-text></p>
+    <input type="hidden" name="rozpis">
+  </div>
+  <div class="pole-dva">
+    <label>Firma <input name="firma" autocomplete="organization" required></label>
+    <label>Jméno <input name="jmeno" autocomplete="name" required></label>
+  </div>
+  <div class="pole-dva">
+    <label>E-mail <input name="email" type="email" autocomplete="email" required></label>
+    <label>Telefon <input name="telefon" type="tel" autocomplete="tel"></label>
+  </div>
+  <label>Místo výkonu práce <input name="misto" placeholder="např. Liberec, Jablonec nad Nisou"></label>
+  <label>Co mají lidé dělat <textarea name="zprava" rows="4" placeholder="pozice, požadavky (průkaz VZV, zdravotní průkaz…), mzda na pozici"></textarea></label>
+  <div class="past" aria-hidden="true"><label>Nevyplňovat <input name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+  <input type="hidden" name="_subject" value="{{ site.formular.predmet }}">
+  <button type="submit" class="tl tl-lime">Odeslat poptávku <span aria-hidden="true">→</span></button>
+  <p class="formular-pozn">Odpovídáme nabídkou, bez závazku. Údaje použijeme jen k vyřízení poptávky.</p>
+  <p class="formular-stav" role="status" aria-live="polite"></p>
+</form>

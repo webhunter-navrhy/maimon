@@ -1,0 +1,44 @@
+[
+  {
+    "id": "prideleni",
+    "nazev": "Dočasné přidělení",
+    "foto": "montaz-oranzova.jpg",
+    "alt": "Pracovník v oranžové reflexní bundě a rukavicích při montáži",
+    "veta": "Lidé jsou zaměstnanci agentury a pracují u vás. Smlouvu, mzdu, odvody a lékařské prohlídky řešíme my, práci jim zadáváte vy.",
+    "hodi": [
+      "potřebujete lidi na měsíce, ne na roky",
+      "počet lidí se mění podle zakázek",
+      "nechcete navyšovat vlastní stavy"
+    ],
+    "pravo": "Agenturní zaměstnávání podle § 307a a § 308–309 zákoníku práce.",
+    "na_vysku": true
+  },
+  {
+    "id": "nabor",
+    "nazev": "Nábor do vašeho kmene",
+    "foto": "sklad-porada.jpg",
+    "alt": "Dvě pracovnice skladu procházejí uličku, jedna s deskami v ruce",
+    "veta": "Najdeme, oslovíme a předvybereme lidi, které pak zaměstnáte přímo vy. Na pohovor posíláme jen ty, kdo splní zadání.",
+    "hodi": [
+      "hledáte stálé lidi na hlavní pracovní poměr",
+      "nemáte vlastní náborový tým",
+      "pozice se dlouho nedaří obsadit"
+    ],
+    "pravo": "Zprostředkování zaměstnání podle zákona č. 435/2004 Sb., o zaměstnanosti.",
+    "na_vysku": false
+  },
+  {
+    "id": "spicka",
+    "nazev": "Pokrytí špičky",
+    "foto": "vozik-pohyb.jpg",
+    "alt": "Oranžový vysokozdvižný vozík a pracovník v pohybu ve skladu dřeva",
+    "veta": "Sezóna, nová zakázka, inventura nebo výpadek kvůli nemocem. Doplníme směny na týdny, kdy vám lidi chybí, a pak zase uberete.",
+    "hodi": [
+      "Vánoce, sezóna, inventura",
+      "náběh nové linky nebo zakázky",
+      "dovolené a nemocnost v létě a v zimě"
+    ],
+    "pravo": "Dočasné přidělení na dobu určitou, rozsah se domlouvá na každé období.",
+    "na_vysku": false
+  }
+]

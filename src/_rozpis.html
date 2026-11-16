@@ -1,0 +1,67 @@
+{# Signature: rozpis směn. Vyplněný rozpis se přenese do formuláře (sessionStorage + ?rozpis). #}
+<section class="rozpis" id="rozpis" aria-labelledby="rozpis-h">
+  <div class="rozpis-in">
+    <header class="rozpis-hlava">
+      <h2 id="rozpis-h" class="nadpis">Kolik lidí chybí ve vašem rozpisu?</h2>
+      <p class="perex">Vyplňte směny jako na tabuli u vedoucího. Z rozpisu poskládáme poptávku, nic nepřepisujete.</p>
+    </header>
+    <div class="rozpis-grid">
+      <form class="rozpis-volby" aria-label="Zadání rozpisu" onsubmit="return false">
+        <fieldset>
+          <legend>Obor</legend>
+          <div class="cipy" data-pole="obor">
+            {% for o in data.obory %}<label class="cip"><input type="radio" name="obor" value="{{ o.slovo }}"{% if loop.index == 2 %} checked{% endif %}><span>{{ o.slovo }}</span></label>{% endfor %}
+            <label class="cip"><input type="radio" name="obor" value="jiný obor"><span>Jiné</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Lidí na směnu</legend>
+          <div class="pocet">
+            <button type="button" data-krok="-1" aria-label="Ubrat">−</button>
+            <output name="pocet" aria-live="polite">6</output>
+            <button type="button" data-krok="1" aria-label="Přidat">+</button>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Směny</legend>
+          <div class="cipy" data-pole="smeny">
+            <label class="cip"><input type="checkbox" name="smena" value="0" checked><span>Ranní <small>6–14</small></span></label>
+            <label class="cip"><input type="checkbox" name="smena" value="1" checked><span>Odpolední <small>14–22</small></span></label>
+            <label class="cip"><input type="checkbox" name="smena" value="2"><span>Noční <small>22–6</small></span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Nástup</legend>
+          <div class="cipy" data-pole="nastup">
+            <label class="cip"><input type="radio" name="nastup" value="co nejdřív"><span>Co nejdřív</span></label>
+            <label class="cip"><input type="radio" name="nastup" value="do 14 dnů" checked><span>Do 14 dnů</span></label>
+            <label class="cip"><input type="radio" name="nastup" value="do měsíce"><span>Do měsíce</span></label>
+            <label class="cip"><input type="radio" name="nastup" value="na sezónu"><span>Na sezónu</span></label>
+          </div>
+        </fieldset>
+      </form>
+
+      <div class="tabule" aria-label="Rozpis směn na týden">
+        <div class="tabule-papir">
+          <div class="tabule-zahlavi">
+            <span class="tabule-tit">Rozpis · týden</span>
+            <span class="tabule-obor" data-out="obor">Sklad</span>
+          </div>
+          <table>
+            <thead><tr><th scope="col"><span class="sr">Směna</span></th>{% for d in ['Po','Út','St','Čt','Pá','So','Ne'] %}<th scope="col"><button type="button" class="den{% if loop.index <= 5 %} on{% endif %}" data-den="{{ loop.index0 }}" aria-pressed="{{ 'true' if loop.index <= 5 else 'false' }}">{{ d }}</button></th>{% endfor %}</tr></thead>
+            <tbody>
+              {% for s in ['Ranní','Odpol.','Noční'] %}{% set si = loop.index0 %}
+              <tr><th scope="row">{{ s }}</th>{% for d in range(7) %}<td><button type="button" class="bunka" data-s="{{ si }}" data-d="{{ d }}" aria-label="{{ s }}, den {{ d + 1 }}"><span></span></button></td>{% endfor %}</tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <p class="tabule-soucet"><strong data-out="smen">60</strong> <span data-out="smen-slovo">směn</span> týdně k obsazení</p>
+        </div>
+      </div>
+    </div>
+    <div class="rozpis-vysledek">
+      <p class="veta" data-out="veta" aria-live="polite">Hledáme 6 lidí do skladu na ranní a odpolední směnu, Po–Pá, nástup do 14 dnů.</p>
+      <a href="{{ url('kontakt') }}#poptavka" class="tl tl-ink" data-rozpis-odeslat>Poslat jako poptávku <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>

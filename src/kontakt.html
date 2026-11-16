@@ -1,0 +1,33 @@
+{% extends "_base.html" %}
+{% set titulek = "Kontakt – Maimon, agentura práce" %}
+{% set popis = "Poptávka lidí na směny pro firmy z výroby, skladů a logistiky. Maimon Brand s.r.o., Sokolská 1365, Liberec." %}
+{% set cesta = "kontakt/" %}
+{% block telo %}podstranka{% endblock %}
+{% block obsah %}
+<section class="kontakt-blok kontakt-stranka" id="poptavka" aria-labelledby="poptavka-h">
+  <div class="kontakt-in">
+    <div class="kontakt-text">
+      <h1 id="poptavka-h" class="nadpis-velky">Kontakt</h1>
+      <p class="perex">Napište, kolik lidí potřebujete, na které směny a&nbsp;od kdy. Nabídku pošleme bez závazku. Rychlejší je <a href="{{ url('') }}#rozpis">vyplnit rozpis směn</a>, přenese se sem sám.</p>
+      <dl class="kontakt-udaje">
+        <dt>Telefon</dt><dd>{% if site.kontakt.telefon %}<a href="tel:{{ site.kontakt.telefon|replace(' ', '') }}">{{ site.kontakt.telefon }}</a>{% else %}<span class="doplnime">doplníme</span>{% endif %}</dd>
+        <dt>E-mail</dt><dd>{% if site.kontakt.email %}<a href="mailto:{{ site.kontakt.email }}">{{ site.kontakt.email }}</a>{% else %}<span class="doplnime">doplníme</span>{% endif %}</dd>
+        <dt>Sídlo</dt><dd>{{ site.kontakt.adresa.ulice }}, {{ site.kontakt.adresa.psc }} {{ site.kontakt.adresa.mesto }}</dd>
+        <dt>Firma</dt><dd>{{ site.firma }}, IČO {{ site.ico }}</dd>
+      </dl>
+    </div>
+    {% include "_formular.html" %}
+  </div>
+</section>
+
+<section class="blok dva-sl" id="uchazeci" aria-labelledby="uchazeci-h">
+  <div>
+    <h2 id="uchazeci-h" class="nadpis">Hledáte práci?</h2>
+    <p class="perex">Web je určený firmám, ale lidi samozřejmě hledáme pořád.</p>
+  </div>
+  <div class="text-sl">
+    <p>Pokud chcete pracovat ve výrobě, ve skladu, na vozíku nebo v&nbsp;potravinářství, napište nám e-mail. Uveďte, odkud jste, jakou práci hledáte, na jaké směny můžete a&nbsp;jaké máte průkazy (VZV, svářečský, zdravotní).</p>
+    <p>Ozveme se, až budeme mít místo, které vám sedí. E-mail pro uchazeče: <span class="doplnime">doplníme</span></p>
+  </div>
+</section>
+{% endblock %}

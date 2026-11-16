@@ -1,0 +1,180 @@
+{% extends "_base.html" %}
+{% set titulek = "Značka – návrhy loga Maimon" %}
+{% set popis = "Tři návrhy loga pro agenturu práce Maimon, barvy, písmo a ukázky na vizitce, vestě, visačce a dodávce." %}
+{% set cesta = "znacka/" %}
+{% block telo %}podstranka{% endblock %}
+{% block obsah %}
+<header class="stranka-hlava">
+  <h1 class="stranka-h">Značka</h1>
+  <p class="perex">Tři návrhy loga, barvy, písmo a&nbsp;jak by značka vypadala v&nbsp;provozu. Web teď používá variantu C. Vyberte a&nbsp;doladíme.</p>
+</header>
+
+<section class="zn-loga" aria-label="Návrhy loga">
+  {% for l in data.loga %}
+  <article class="zn-logo r" id="logo-{{ l.id }}">
+    <div class="zn-logo-hlava">
+      <p class="zn-pismeno" aria-hidden="true">{{ l.id|upper }}</p>
+      <div>
+        <h2 class="zn-nazev">{{ l.id|upper }} · {{ l.nazev }}{% if l.get("doporuceni") %} <span class="zn-doporuc">doporučujeme</span>{% endif %}</h2>
+        <p class="zn-veta">{{ l.veta }}</p>
+      </div>
+      <dl class="zn-plusy">
+        <div><dt>Silné</dt><dd>{{ l.silne }}</dd></div>
+        <div><dt>Pozor</dt><dd>{{ l.slabe }}</dd></div>
+      </dl>
+    </div>
+    <div class="zn-plochy">
+      <div class="zn-plocha zn-svetla"><img src="{{ base }}brand/{{ l.id }}-light.svg" alt="Logo {{ l.id|upper }} na světlém podkladu" width="{{ l.w }}" height="{{ l.h }}" loading="lazy"></div>
+      <div class="zn-plocha zn-tmava"><img src="{{ base }}brand/{{ l.id }}-dark.svg" alt="Logo {{ l.id|upper }} na tmavém podkladu" width="{{ l.w }}" height="{{ l.h }}" loading="lazy"></div>
+      <div class="zn-plocha zn-limetka"><img src="{{ base }}brand/{{ l.id }}-lime.svg" alt="Logo {{ l.id|upper }} na limetkovém podkladu" width="{{ l.w }}" height="{{ l.h }}" loading="lazy"></div>
+      <div class="zn-plocha zn-ikony">
+        <img src="{{ base }}brand/sym-{{ l.id }}.svg" alt="Ikona {{ l.id|upper }}" width="96" height="96" loading="lazy">
+        <img src="{{ base }}brand/sym-{{ l.id }}.svg" alt="" width="48" height="48" loading="lazy">
+        <img src="{{ base }}brand/sym-{{ l.id }}.svg" alt="" width="24" height="24" loading="lazy">
+        <span>ikona v&nbsp;96, 48 a&nbsp;24&nbsp;px</span>
+      </div>
+    </div>
+  </article>
+  {% endfor %}
+</section>
+
+<section class="zn-aplikace" id="aplikace" aria-labelledby="apl-h" data-base="{{ base }}">
+  <div class="zn-apl-hlava">
+    <h2 id="apl-h" class="nadpis">Značka v&nbsp;provozu</h2>
+    <div class="zn-prepinac" role="group" aria-label="Logo v ukázkách">
+      <span>Ukázky s&nbsp;logem</span>
+      {% for l in data.loga %}<button type="button" data-varianta="{{ l.id }}" aria-pressed="{{ 'true' if l.get('doporuceni') else 'false' }}">{{ l.id|upper }}</button>{% endfor %}
+    </div>
+  </div>
+
+  <div class="zn-mrizka">
+    <figure class="zn-mock zn-vesta r">
+      <div class="zn-vesta-obr">
+        <svg viewBox="0 0 300 360" aria-hidden="true">
+          <defs><clipPath id="vesta-tvar"><path d="M110 18 L58 30 C62 80 56 115 38 140 L44 342 L256 342 L262 140 C244 115 238 80 242 30 L190 18 C178 36 122 36 110 18 Z"/></clipPath></defs>
+          <path d="M110 18 L58 30 C62 80 56 115 38 140 L44 342 L256 342 L262 140 C244 115 238 80 242 30 L190 18 C178 36 122 36 110 18 Z" fill="#D2F53C"/>
+          <g clip-path="url(#vesta-tvar)">
+            <rect x="30" y="252" width="240" height="20" fill="#C9CCCF"/><rect x="30" y="296" width="240" height="20" fill="#C9CCCF"/>
+            <rect x="30" y="252" width="240" height="2" fill="#fff" opacity=".7"/><rect x="30" y="296" width="240" height="2" fill="#fff" opacity=".7"/>
+          </g>
+          <path d="M110 18 L58 30 C62 80 56 115 38 140 L44 342 L256 342 L262 140 C244 115 238 80 242 30 L190 18 C178 36 122 36 110 18 Z" fill="none" stroke="#15171A" stroke-opacity=".25" stroke-width="2"/>
+        </svg>
+        <img data-zn="lime" src="{{ base }}brand/c-lime.svg" alt="Logo na zádech reflexní vesty" width="754" height="310" loading="lazy">
+      </div>
+      <figcaption>Reflexní vesta, záda. Limetka značky je zároveň signální barva.</figcaption>
+    </figure>
+
+    <figure class="zn-mock zn-vizitky r">
+      <div class="zn-vizitky-in">
+        <div class="zn-vizitka zn-viz-predni"><img data-zn="dark" src="{{ base }}brand/c-dark.svg" alt="Přední strana vizitky s logem" width="754" height="310" loading="lazy"></div>
+        <div class="zn-vizitka zn-viz-zadni">
+          <img data-zn="sym" src="{{ base }}brand/sym-c.svg" alt="" width="48" height="48" loading="lazy">
+          <p class="zn-viz-jmeno">Jméno Příjmení</p>
+          <p class="zn-viz-role">péče o&nbsp;firmy</p>
+          <span class="zn-linka"></span><span class="zn-linka zn-linka-kratka"></span>
+        </div>
+      </div>
+      <figcaption>Vizitka 85 × 55&nbsp;mm, přední a&nbsp;zadní strana.</figcaption>
+    </figure>
+
+    <figure class="zn-mock zn-auto r">
+      <div class="zn-auto-obr">
+        <svg viewBox="0 0 600 260" aria-hidden="true">
+          <ellipse cx="300" cy="240" rx="280" ry="10" fill="#15171A" opacity=".12"/>
+          <path d="M20 205 L20 72 Q20 42 50 42 L470 42 Q492 42 506 62 L558 132 Q582 138 582 164 L582 205 Z" fill="#FAF9F5" stroke="#15171A" stroke-opacity=".2" stroke-width="2"/>
+          <path d="M448 58 L494 58 L538 126 L448 126 Z" fill="#2A2D31"/>
+          <rect x="20" y="176" width="562" height="14" fill="#D2F53C"/>
+          <rect x="380" y="58" width="2" height="146" fill="#15171A" opacity=".15"/>
+          <circle cx="132" cy="206" r="34" fill="#15171A"/><circle cx="132" cy="206" r="13" fill="#D9D5CA"/>
+          <circle cx="470" cy="206" r="34" fill="#15171A"/><circle cx="470" cy="206" r="13" fill="#D9D5CA"/>
+        </svg>
+        <img data-zn="light" src="{{ base }}brand/c-light.svg" alt="Logo na boku dodávky" width="754" height="310" loading="lazy">
+      </div>
+      <figcaption>Dodávka na rozvoz lidí na směny.</figcaption>
+    </figure>
+
+    <figure class="zn-mock zn-visacka r">
+      <div class="zn-visacka-in">
+        <span class="zn-snurka" aria-hidden="true"></span>
+        <div class="zn-karta">
+          <div class="zn-karta-pas"><img data-zn="dark" src="{{ base }}brand/c-dark.svg" alt="Logo na identifikační kartě" width="754" height="310" loading="lazy"></div>
+          <div class="zn-karta-telo">
+            <span class="zn-karta-foto" aria-hidden="true"></span>
+            <p class="zn-viz-jmeno">Jméno Příjmení</p>
+            <p class="zn-viz-role">přidělený pracovník</p>
+            <span class="zn-karta-smena">ranní směna</span>
+          </div>
+        </div>
+      </div>
+      <figcaption>Identifikační karta pro lidi na přidělení.</figcaption>
+    </figure>
+
+    <figure class="zn-mock zn-plakat r">
+      <div class="zn-plakat-in">
+        <img data-zn="dark" src="{{ base }}brand/c-dark.svg" alt="Logo na plakátu" width="754" height="310" loading="lazy">
+        <p class="zn-plakat-h">Kolik lidí vám chybí na směně?</p>
+        <div class="zn-plakat-mrizka" aria-hidden="true">{% for i in range(21) %}<span{% if i in [1,2,3,4,8,9,10,11,15,16,17] %} class="on"{% endif %}></span>{% endfor %}</div>
+        <p class="zn-plakat-pata">Doplníme lidi do výroby a&nbsp;skladu.</p>
+      </div>
+      <figcaption>Inzerce pro firmy, plakát A3.</figcaption>
+    </figure>
+
+    <figure class="zn-mock zn-digital r">
+      <div class="zn-digital-in">
+        <div class="zn-tab"><img data-zn="sym" src="{{ base }}brand/sym-c.svg" alt="" width="16" height="16" loading="lazy"><span>Maimon – agentura práce</span><span class="zn-tab-x" aria-hidden="true">×</span></div>
+        <div class="zn-okno" aria-hidden="true">
+          <div class="zn-okno-lista"><img data-zn="light" src="{{ base }}brand/c-light.svg" alt="" width="754" height="310" loading="lazy"><span></span><span></span><span></span><b></b></div>
+          <p class="zn-okno-h">Doplníme lidi na&nbsp;směnu.</p>
+          <div class="zn-okno-mrizka">{% for i in range(14) %}<span{% if i in [0,1,2,3,7,8,9] %} class="on"{% endif %}></span>{% endfor %}</div>
+        </div>
+        <div class="zn-profil">
+          <img data-zn="sym" class="zn-avatar" src="{{ base }}brand/sym-c.svg" alt="Profilový obrázek s ikonou" width="88" height="88" loading="lazy">
+          <div><p class="zn-viz-jmeno">Maimon – agentura práce</p><p class="zn-viz-role">Agentura práce · Liberec</p><span class="zn-linka"></span></div>
+        </div>
+      </div>
+      <figcaption>Záložka prohlížeče a&nbsp;profil na sítích.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="blok dva-sl" aria-labelledby="barvy-h">
+  <div>
+    <h2 id="barvy-h" class="nadpis">Barvy</h2>
+    <p class="perex">Papír a&nbsp;inkoust nesou většinu plochy. Limetka je signál: tlačítko, obsazená směna, vesta. Čím méně jí je, tím víc svítí.</p>
+  </div>
+  <div class="zn-barvy">
+    <div class="zn-barva" style="--b:#F1EFE8"><span></span><p><strong>Papír</strong> #F1EFE8</p></div>
+    <div class="zn-barva" style="--b:#D9D5CA"><span></span><p><strong>Kámen</strong> #D9D5CA</p></div>
+    <div class="zn-barva" style="--b:#15171A"><span></span><p><strong>Inkoust</strong> #15171A</p></div>
+    <div class="zn-barva" style="--b:#D2F53C"><span></span><p><strong>Limetka</strong> #D2F53C</p></div>
+    <div class="zn-pomer" aria-label="Doporučený poměr barev"><span style="flex:6;background:#F1EFE8"></span><span style="flex:3;background:#15171A"></span><span style="flex:1;background:#D2F53C"></span></div>
+    <p class="zn-pomer-popis">Poměr na ploše zhruba 6 : 3 : 1</p>
+  </div>
+</section>
+
+<section class="blok dva-sl" aria-labelledby="pismo-h">
+  <div>
+    <h2 id="pismo-h" class="nadpis">Písmo</h2>
+    <p class="perex">Obě písma jsou zdarma (open source licence) a&nbsp;mají celou češtinu.</p>
+  </div>
+  <div class="zn-pisma">
+    <div class="zn-pismo">
+      <p class="stitek">Nadpisy · Bricolage Grotesque</p>
+      <p class="zn-ukazka-display">Doplníme lidi na směnu.</p>
+      <p class="zn-znaky zn-znaky-d">ĚŠČŘŽÝÁÍÉŮÚ ěščřžýáíéůú 0123456789</p>
+    </div>
+    <div class="zn-pismo">
+      <p class="stitek">Texty · Geist</p>
+      <p class="zn-ukazka-text">Přidělení lidé mají stejné mzdové podmínky jako vaši zaměstnanci. Smlouvy, mzdy a&nbsp;odvody řešíme my.</p>
+      <p class="zn-znaky">ĚŠČŘŽÝÁÍÉŮÚ ěščřžýáíéůú 0123456789</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-pas" aria-labelledby="cta-h">
+  <div class="cta-pas-in">
+    <h2 id="cta-h">Který směr se vám líbí?</h2>
+    <p class="zn-cta-text">Vybraný návrh doladíme: tvar, barvu i&nbsp;podtitul. Název Maimon je zatím pracovní, vychází z&nbsp;názvu firmy.</p>
+  </div>
+</section>
+{% endblock %}

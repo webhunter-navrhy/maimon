@@ -1,0 +1,130 @@
+{% extends "_base.html" %}
+{% set titulek = "Maimon – agentura práce pro výrobu, sklady a logistiku" %}
+{% set cesta = "" %}
+{% block telo %}uvod{% endblock %}
+{% block obsah %}
+<section class="hero">
+  <div class="hero-foto">
+    {{ img('sklad-nastup.jpg', 'Pracovníci v reflexních vestách procházejí uličkou skladu', sizes='100vw', cls='hero-img') }}
+  </div>
+  <div class="hero-in">
+    <h1 class="hero-h"><span>Lidi</span> <span>na <mark>směnu.</mark></span></h1>
+    <div class="hero-pata">
+      <p class="hero-nabidka">Agentura práce pro firmy z&nbsp;výroby, skladů a&nbsp;logistiky. Napíšete, kolik lidí a&nbsp;na které směny chybí, my je najdeme, zaměstnáme a&nbsp;pošleme k&nbsp;vám.</p>
+      <div class="hero-tl">
+        <a href="#rozpis" class="tl tl-lime">Vyplnit rozpis směn</a>
+        <a href="{{ url('spoluprace') }}" class="tl tl-obrys-svetly">Jak spolupráce funguje</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pruh-nabidka" aria-label="Co nabízíme">
+  <ul>
+    <li><strong>Dočasné přidělení</strong> lidé jsou naši zaměstnanci, pracují u&nbsp;vás</li>
+    <li><strong>Nábor do kmene</strong> najdeme lidi, které zaměstnáte vy</li>
+    <li><strong>Pokrytí špičky</strong> sezóna, zakázka, inventura</li>
+  </ul>
+</section>
+
+{% include "_rozpis.html" %}
+
+<section class="formy" aria-labelledby="formy-h">
+  <div class="sekce-hlava">
+    <h2 id="formy-h" class="nadpis">Tři způsoby, jak vám lidi doplníme</h2>
+    <p class="perex">Vyberte podle toho, jestli lidi potřebujete na čas, natrvalo, nebo jen na pár týdnů v&nbsp;roce.</p>
+  </div>
+  {% for f in data.formy %}
+  <article class="forma{% if loop.index is even %} forma-obr{% endif %}{% if f.get("na_vysku") %} forma-vyska{% endif %}" id="{{ f.id }}">
+    <div class="forma-foto r">{{ img(f.foto, f.alt, sizes='(min-width: 900px) 55vw, 100vw') }}</div>
+    <div class="forma-text r">
+      <h3>{{ f.nazev }}</h3>
+      <p class="forma-veta">{{ f.veta }}</p>
+      <p class="stitek">Hodí se, když</p>
+      <ul class="fajfky">{% for h in f.hodi %}<li>{{ h }}</li>{% endfor %}</ul>
+      <p class="forma-pravo">{{ f.pravo }}</p>
+    </div>
+  </article>
+  {% endfor %}
+</section>
+
+<section class="obory" aria-labelledby="obory-h">
+  <div class="sekce-hlava">
+    <h2 id="obory-h" class="nadpis">Kam lidi posíláme</h2>
+    <a href="{{ url('obory') }}" class="odkaz">Pozice podle oborů <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="obory-mozaika">
+    {% for o in data.obory %}
+    <a href="{{ url('obory') }}#{{ o.id }}" class="obor obor-{{ loop.index }} r">
+      {{ img(o.foto, o.alt, sizes='(min-width: 900px) 50vw, 100vw') }}
+      <span class="obor-slovo">{{ o.slovo }}</span>
+      <span class="obor-pozice">{{ o.pozice[:3]|join(' · ') }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="kdo" aria-labelledby="kdo-h">
+  <div class="kdo-in">
+    <div class="kdo-hlava">
+      <h2 id="kdo-h" class="nadpis">Kdo co řeší</h2>
+      <p class="perex">U&nbsp;agenturního zaměstnávání je dobré mít od začátku jasno. Vy vedete práci, my řešíme všechno kolem zaměstnance.</p>
+    </div>
+    <table class="kdo-tab">
+      <thead><tr><th scope="col"><span class="sr">Úkol</span></th><th scope="col">My</th><th scope="col">Vy</th></tr></thead>
+      <tbody>
+      {% for k in data.kdo %}
+        <tr class="r"><th scope="row">{{ k.co }}{% if k.get("pozn") %} <small>{{ k.pozn }}</small>{% endif %}</th>
+          <td>{% if k.my %}<span class="znacka-my" aria-label="ano"></span>{% endif %}</td>
+          <td>{% if k.vy %}<span class="znacka-vy" aria-label="ano"></span>{% endif %}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="predel" aria-hidden="true">
+  {{ img('role-rukavice.jpg', '', sizes='100vw', cls='predel-img') }}
+</section>
+
+<section class="kroky" aria-labelledby="kroky-h">
+  <div class="sekce-hlava">
+    <h2 id="kroky-h" class="nadpis">Od poptávky k&nbsp;první směně</h2>
+  </div>
+  <ol class="kroky-osa">
+    {% for k in data.kroky %}
+    <li class="krok r"><span class="krok-c">{{ loop.index }}</span><h3>{{ k.nazev }}</h3><p>{{ k.text }}</p></li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="povoleni" aria-labelledby="povoleni-h">
+  <div class="povoleni-in">
+    <div class="povoleni-razitko r">
+      <h2 id="povoleni-h">Povolení ke zprostředkování zaměstnání</h2>
+      <p>Agenturu práce smí provozovat jen firma s&nbsp;povolením Generálního ředitelství Úřadu práce ČR (zákon č.&nbsp;435/2004&nbsp;Sb.). Seznam povolených agentur zveřejňuje MPSV.</p>
+      <p class="povoleni-cislo">{% if site.povoleni %}Č. j. {{ site.povoleni }}{% else %}<span class="doplnime">číslo povolení doplníme</span>{% endif %}</p>
+    </div>
+    <div class="hledate r">
+      <h2>Hledáte práci?</h2>
+      <p>Tenhle web je pro firmy. Pokud hledáte práci ve výrobě nebo ve skladu, napište nám a&nbsp;ozveme se, až budeme mít volné místo.</p>
+      <a href="{{ url('kontakt') }}#uchazeci" class="odkaz">Kontakt pro uchazeče <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt-blok" id="poptavka" aria-labelledby="poptavka-h">
+  <div class="kontakt-in">
+    <div class="kontakt-text">
+      <h2 id="poptavka-h" class="nadpis-velky">Napište, kolik lidí potřebujete.</h2>
+      <p class="perex">Nabídku pošleme podle vašeho rozpisu. Bez závazku a&nbsp;bez obchodních schůzek, které nikdo nechce.</p>
+      <dl class="kontakt-udaje">
+        <dt>Telefon</dt><dd>{% if site.kontakt.telefon %}<a href="tel:{{ site.kontakt.telefon|replace(' ', '') }}">{{ site.kontakt.telefon }}</a>{% else %}<span class="doplnime">doplníme</span>{% endif %}</dd>
+        <dt>E-mail</dt><dd>{% if site.kontakt.email %}<a href="mailto:{{ site.kontakt.email }}">{{ site.kontakt.email }}</a>{% else %}<span class="doplnime">doplníme</span>{% endif %}</dd>
+        <dt>Sídlo</dt><dd>{{ site.kontakt.adresa.ulice }}, {{ site.kontakt.adresa.psc }} {{ site.kontakt.adresa.mesto }}</dd>
+      </dl>
+    </div>
+    {% include "_formular.html" %}
+  </div>
+</section>
+{% endblock %}
