@@ -8,7 +8,7 @@
   <div class="kontakt-in">
     <div class="kontakt-text">
       <h1 id="poptavka-h" class="nadpis-velky">Kontakt</h1>
-      <p class="perex">Napište, kolik lidí potřebujete, na které směny a&nbsp;od kdy. Nabídku pošleme bez závazku. Rychlejší je <a href="{{ url('') }}#rozpis">vyplnit rozpis směn</a>, přenese se sem sám.</p>
+      <p class="perex">Napište, kolik lidí potřebujete, na které směny a&nbsp;od kdy. Nabídku pošleme bez závazku.</p>
       <dl class="kontakt-udaje">
         <dt>Telefon</dt><dd>{% if site.kontakt.telefon %}<a href="tel:{{ site.kontakt.telefon|replace(' ', '') }}">{{ site.kontakt.telefon }}</a>{% else %}<span class="doplnime">doplníme</span>{% endif %}</dd>
         <dt>E-mail</dt><dd>{% if site.kontakt.email %}<a href="mailto:{{ site.kontakt.email }}">{{ site.kontakt.email }}</a>{% else %}<span class="doplnime">doplníme</span>{% endif %}</dd>

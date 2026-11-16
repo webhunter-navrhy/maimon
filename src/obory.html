@@ -21,7 +21,7 @@
       <div class="obor-radek-text">
         <p>{{ o.text }}</p>
         <ul class="pozice" aria-label="Pozice">{% for p in o.pozice %}<li>{{ p }}</li>{% endfor %}</ul>
-        <a href="{{ url('') }}#rozpis" class="odkaz" data-obor="{{ o.slovo }}">Poptat lidi do oboru {{ o.slovo }} <span aria-hidden="true">→</span></a>
+        <a href="{{ url('kontakt') }}#poptavka" class="odkaz" data-obor="{{ o.slovo }}">Poptat lidi do oboru {{ o.slovo }} <span aria-hidden="true">→</span></a>
       </div>
     </div>
     <div class="obor-radek-foto r">{{ img(o.foto, o.alt, sizes='(min-width: 900px) 48vw, 100vw') }}</div>
