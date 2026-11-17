@@ -4,7 +4,7 @@
   "url": "https://webhunter-navrhy.github.io/maimon/",
   "base": "/maimon/",
   "lang": "cs",
-  "popis": "Agentura práce pro firmy z výroby, skladů a logistiky. Doplníme lidi na směny – dočasné přidělení, nábor do kmene i pokrytí špičky. Sídlo Liberec.",
+  "popis": "Agentura práce pro firmy z výroby, skladů a logistiky. Zajistíme pracovníky na směny – dočasné přidělení, nábor do kmene i pokrytí špičky. Sídlo Liberec.",
   "navrh": true,
   "domena": "",
   "og_image": "sklad-nastup.jpg",
@@ -29,7 +29,7 @@
   "formular": {
     "endpoint": "",
     "demo": true,
-    "predmet": "Poptávka lidí z webu"
+    "predmet": "Poptávka pracovníků z webu"
   },
   "nav": [
     {

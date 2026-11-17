@@ -1,12 +1,12 @@
 {% extends "_base.html" %}
 {% set titulek = "Obory a pozice – Maimon, agentura práce" %}
-{% set popis = "Výroba, sklad, VZV, potravinářství a kovovýroba. Pozice, na které agentura práce Maimon hledá lidi pro firmy." %}
+{% set popis = "Výroba, sklad, VZV, potravinářství a kovovýroba. Pozice, na které agentura práce Maimon hledá pracovníky pro firmy." %}
 {% set cesta = "obory/" %}
 {% block telo %}podstranka{% endblock %}
 {% block obsah %}
 <header class="stranka-hlava">
   <h1 class="stranka-h">Obory</h1>
-  <p class="perex">Lidi posíláme tam, kde se pracuje na směny: do výroby, skladů a&nbsp;logistiky. Pozice níže jsou ty nejčastější, napsat můžete i&nbsp;s&nbsp;jinou.</p>
+  <p class="perex">Pracovníky zajišťujeme do provozů se směnným režimem: do výroby, skladů a&nbsp;logistiky. Níže uvádíme nejčastější pozice, poptat můžete i&nbsp;jiné.</p>
 </header>
 
 <nav class="skok" aria-label="Obory">
@@ -21,7 +21,7 @@
       <div class="obor-radek-text">
         <p>{{ o.text }}</p>
         <ul class="pozice" aria-label="Pozice">{% for p in o.pozice %}<li>{{ p }}</li>{% endfor %}</ul>
-        <a href="{{ url('kontakt') }}#poptavka" class="odkaz" data-obor="{{ o.slovo }}">Poptat lidi do oboru {{ o.slovo }} <span aria-hidden="true">→</span></a>
+        <a href="{{ url('kontakt') }}#poptavka" class="odkaz" data-obor="{{ o.slovo }}">Poptat pracovníky do oboru {{ o.slovo }} <span aria-hidden="true">→</span></a>
       </div>
     </div>
     <div class="obor-radek-foto r">{{ img(o.foto, o.alt, sizes='(min-width: 900px) 48vw, 100vw') }}</div>
@@ -32,8 +32,8 @@
 <section class="blok dva-sl" aria-labelledby="region-h">
   <h2 id="region-h" class="nadpis">Kde působíme</h2>
   <div class="text-sl">
-    <p>Sídlo máme v&nbsp;Liberci. Přesný seznam regionů, kam lidi dodáváme, <span class="doplnime">doplníme</span>.</p>
-    <p>Když máte provoz jinde, napište. Řekneme vám rovnou, jestli tam lidi seženeme.</p>
+    <p>Sídlo máme v&nbsp;Liberci. Přesný seznam regionů, kam pracovníky zajišťujeme, <span class="doplnime">doplníme</span>.</p>
+    <p>Pokud máte provoz v&nbsp;jiném regionu, napište nám. Obratem vám sdělíme, zda tam dokážeme pracovníky zajistit.</p>
   </div>
 </section>
 

@@ -26,7 +26,7 @@
 </head>
 <body class="{% block telo %}{% endblock %}">
 <a class="skip" href="#obsah">Přeskočit na obsah</a>
-<div class="lista"><div class="lista-in"><span>Agentura práce pro výrobu, sklady a logistiku</span><span class="lista-prava">Sokolská 1365, Liberec <a href="{{ url('kontakt') }}#poptavka">Poptat lidi <span aria-hidden="true">→</span></a></span></div></div>
+<div class="lista"><div class="lista-in"><span>Agentura práce pro výrobu, sklady a logistiku</span><span class="lista-prava">Sokolská 1365, Liberec <a href="{{ url('kontakt') }}#poptavka">Poptat pracovníky <span aria-hidden="true">→</span></a></span></div></div>
 <header class="hlavicka">
   <div class="hlavicka-in">
     <a href="{{ url('') }}" class="logo" aria-label="{{ site.nazev }} – úvod"><img src="{{ base }}{{ site.logo }}" alt="Maimon – agentura práce" width="145" height="48"></a>
@@ -34,7 +34,7 @@
       {% for n in site.nav %}<a href="{{ url(n.href) }}"{% if cesta == n.href ~ '/' %} aria-current="page"{% endif %}>{{ n.text }}</a>{% endfor %}
       <a href="{{ url('kontakt') }}" class="menu-kontakt"{% if cesta == 'kontakt/' %} aria-current="page"{% endif %}>Kontakt</a>
     </nav>
-    <a href="{{ url('kontakt') }}#poptavka" class="tl tl-ink tl-mala hlavicka-cta">Poptat lidi</a>
+    <a href="{{ url('kontakt') }}#poptavka" class="tl tl-ink tl-mala hlavicka-cta">Poptat pracovníky</a>
     <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Menu"><span></span><span></span></button>
   </div>
 </header>
@@ -45,8 +45,8 @@
   <div class="paticka-in">
     <div class="paticka-hlava">
       <img src="{{ base }}brand/c-dark.svg" alt="Maimon – agentura práce" width="196" height="65" loading="lazy">
-      <p class="paticka-claim">Lidi na směnu. Pro výrobu, sklady a logistiku.</p>
-      <a href="{{ url('kontakt') }}#poptavka" class="tl tl-oranz">Poptat lidi <span aria-hidden="true">→</span></a>
+      <p class="paticka-claim">Pracovníci pro výrobu, sklady a&nbsp;logistiku.</p>
+      <a href="{{ url('kontakt') }}#poptavka" class="tl tl-oranz">Poptat pracovníky <span aria-hidden="true">→</span></a>
     </div>
     <div class="paticka-sloupce">
       <div>

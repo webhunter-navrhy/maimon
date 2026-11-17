@@ -4,10 +4,10 @@
     "nazev": "Dočasné přidělení",
     "foto": "montaz-oranzova.jpg",
     "alt": "Pracovník v oranžové reflexní bundě a rukavicích při montáži",
-    "veta": "Lidé jsou zaměstnanci agentury a pracují u vás. Smlouvu, mzdu, odvody a lékařské prohlídky řešíme my, práci jim zadáváte vy.",
+    "veta": "Pracovníci jsou zaměstnanci agentury a pracují ve vašem provozu. Pracovní smlouvu, mzdu, odvody a lékařské prohlídky zajišťujeme my, práci jim přidělujete vy.",
     "hodi": [
-      "potřebujete lidi na měsíce, ne na roky",
-      "počet lidí se mění podle zakázek",
+      "potřebujete pracovníky na několik měsíců",
+      "počet pracovníků se mění podle zakázek",
       "nechcete navyšovat vlastní stavy"
     ],
     "pravo": "Agenturní zaměstnávání podle § 307a a § 308–309 zákoníku práce.",
@@ -18,9 +18,9 @@
     "nazev": "Nábor do vašeho kmene",
     "foto": "sklad-porada.jpg",
     "alt": "Dvě pracovnice skladu procházejí uličku, jedna s deskami v ruce",
-    "veta": "Najdeme, oslovíme a předvybereme lidi, které pak zaměstnáte přímo vy. Na pohovor posíláme jen ty, kdo splní zadání.",
+    "veta": "Vyhledáme, oslovíme a předvybereme uchazeče, které následně zaměstnáte přímo vy. K pohovoru doporučíme pouze ty, kteří splňují vaše požadavky.",
     "hodi": [
-      "hledáte stálé lidi na hlavní pracovní poměr",
+      "hledáte stálé zaměstnance na hlavní pracovní poměr",
       "nemáte vlastní náborový tým",
       "pozice se dlouho nedaří obsadit"
     ],
@@ -32,7 +32,7 @@
     "nazev": "Pokrytí špičky",
     "foto": "vozik-pohyb.jpg",
     "alt": "Oranžový vysokozdvižný vozík a pracovník v pohybu ve skladu dřeva",
-    "veta": "Sezóna, nová zakázka, inventura nebo výpadek kvůli nemocem. Doplníme směny na týdny, kdy vám lidi chybí, a pak zase uberete.",
+    "veta": "Sezóna, nová zakázka, inventura nebo výpadek kvůli nemocem. Na období zvýšené potřeby doplníme směny a po jeho skončení počet pracovníků opět snížíme.",
     "hodi": [
       "Vánoce, sezóna, inventura",
       "náběh nové linky nebo zakázky",

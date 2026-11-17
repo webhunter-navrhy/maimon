@@ -10,10 +10,10 @@
   <div class="hero-in">
     <div class="hero-text">
       <p class="hero-kde"><span class="hero-tecka" aria-hidden="true"></span>Agentura práce · Liberec</p>
-      <h1 class="hero-h">Lidi na <mark>směnu.</mark></h1>
-      <p class="hero-nabidka">Agentura práce pro firmy z&nbsp;výroby, skladů a&nbsp;logistiky. Napíšete, kolik lidí a&nbsp;na které směny chybí, my je najdeme, zaměstnáme a&nbsp;pošleme k&nbsp;vám.</p>
+      <h1 class="hero-h">Pracovníci <mark>na&nbsp;směny</mark></h1>
+      <p class="hero-nabidka">Agentura práce pro firmy z&nbsp;výroby, skladů a&nbsp;logistiky. Sdělte nám, kolik pracovníků a&nbsp;na které směny potřebujete. Vhodné uchazeče vyhledáme, zaměstnáme a&nbsp;zajistíme jejich nástup.</p>
       <div class="hero-tl">
-        <a href="#poptavka" class="tl tl-oranz">Poptat lidi <span aria-hidden="true">→</span></a>
+        <a href="#poptavka" class="tl tl-oranz">Poptat pracovníky <span aria-hidden="true">→</span></a>
         <a href="{{ url('spoluprace') }}" class="tl tl-obrys-svetly">Jak spolupráce funguje</a>
       </div>
     </div>
@@ -21,7 +21,7 @@
       <p class="pruh-tit">Co nabízíme</p>
       <ul>
         {% for f in data.formy %}
-        <li><a href="{{ url('spoluprace') }}#{{ f.id }}"><span class="pruh-t"><strong>{{ f.nazev }}</strong> <span>{% if loop.index == 1 %}lidé jsou naši zaměstnanci, pracují u&nbsp;vás{% elif loop.index == 2 %}najdeme lidi, které zaměstnáte vy{% else %}sezóna, zakázka, inventura{% endif %}</span></span><span class="kruh" aria-hidden="true">→</span></a></li>
+        <li><a href="{{ url('spoluprace') }}#{{ f.id }}"><span class="pruh-t"><strong>{{ f.nazev }}</strong> <span>{% if loop.index == 1 %}pracovníci jsou našimi zaměstnanci a&nbsp;pracují u&nbsp;vás{% elif loop.index == 2 %}vyhledáme pracovníky, které zaměstnáte přímo vy{% else %}sezóna, zakázka, inventura{% endif %}</span></span><span class="kruh" aria-hidden="true">→</span></a></li>
         {% endfor %}
       </ul>
     </aside>
@@ -30,8 +30,8 @@
 
 <section class="formy" aria-labelledby="formy-h">
   <div class="sekce-hlava">
-    <h2 id="formy-h" class="nadpis">Tři způsoby, jak vám lidi doplníme</h2>
-    <p class="perex">Vyberte podle toho, jestli lidi potřebujete na čas, natrvalo, nebo jen na pár týdnů v&nbsp;roce.</p>
+    <h2 id="formy-h" class="nadpis">Tři způsoby, jak vám pracovníky zajistíme</h2>
+    <p class="perex">Formu spolupráce zvolte podle toho, zda pracovníky potřebujete dočasně, natrvalo, nebo jen na několik týdnů v&nbsp;roce.</p>
   </div>
   {% for f in data.formy %}
   <article class="forma r" id="{{ f.id }}">
@@ -51,7 +51,7 @@
   <div class="obory-in">
     <div class="obory-seznam">
       <div class="sekce-hlava">
-        <h2 id="obory-h" class="nadpis">Kam lidi posíláme</h2>
+        <h2 id="obory-h" class="nadpis">Obory, ve kterých působíme</h2>
         <a href="{{ url('obory') }}" class="odkaz">Pozice podle oborů <span aria-hidden="true">→</span></a>
       </div>
       <ul class="obory-rejstrik">
@@ -79,7 +79,7 @@
   <div class="kdo-obsah">
   <div class="kdo-hlava">
     <h2 id="kdo-h" class="nadpis">Kdo co řeší</h2>
-    <p class="perex">U&nbsp;agenturního zaměstnávání je dobré mít od začátku jasno. Vy vedete práci, my řešíme všechno kolem zaměstnance.</p>
+    <p class="perex">U&nbsp;agenturního zaměstnávání je dobré mít rozdělení povinností jasné od začátku. Vy řídíte práci, my zajišťujeme vše, co se týká pracovního poměru.</p>
   </div>
   <div class="kdo-karty">
     <div class="kdo-karta kdo-my r">
@@ -100,8 +100,8 @@
 <section class="predel" aria-label="Proč Maimon">
   {{ img('role-rukavice.jpg', 'Pracovník v rukavicích manipuluje s rolí materiálu', sizes='100vw', cls='predel-img') }}
   <div class="predel-in">
-    <p class="predel-veta">Aby v&nbsp;pondělí v&nbsp;šest ráno stáli u&nbsp;linky.</p>
-    <p class="predel-pod">Ne další inzerát. Lidi, kteří na směnu opravdu přijdou, a&nbsp;náhrada, když někdo odejde.</p>
+    <p class="predel-veta">Aby každá směna byla obsazená.</p>
+    <p class="predel-pod">Prověření pracovníci, na které se můžete spolehnout, a&nbsp;rychlá náhrada, pokud někdo odejde.</p>
   </div>
 </section>
 
@@ -128,7 +128,7 @@
     </div>
     <div class="hledate r">
       <h2>Hledáte práci?</h2>
-      <p>Tenhle web je pro firmy. Pokud hledáte práci ve výrobě nebo ve skladu, napište nám a&nbsp;ozveme se, až budeme mít volné místo.</p>
+      <p>Tyto stránky jsou určeny především firmám. Pokud hledáte práci ve výrobě nebo ve skladu, napište nám. Ozveme se, jakmile budeme mít volné místo.</p>
       <a href="{{ url('kontakt') }}#uchazeci" class="odkaz">Kontakt pro uchazeče <span aria-hidden="true">→</span></a>
     </div>
   </div>
@@ -138,8 +138,8 @@
   <div class="kontakt-in">
     <div class="kontakt-text">
       <div class="kontakt-foto" aria-hidden="true">{{ img('rampy.jpg', '', sizes='(min-width: 1000px) 45vw, 100vw') }}</div>
-      <h2 id="poptavka-h" class="nadpis-velky">Napište, kolik lidí potřebujete.</h2>
-      <p class="perex">Nabídku pošleme podle vašeho rozpisu. Bez závazku a&nbsp;bez obchodních schůzek, které nikdo nechce.</p>
+      <h2 id="poptavka-h" class="nadpis-velky">Napište nám, kolik pracovníků potřebujete.</h2>
+      <p class="perex">Podle vašich požadavků připravíme nezávaznou nabídku.</p>
       <dl class="kontakt-udaje">
         <dt>Telefon</dt><dd>{% if site.kontakt.telefon %}<a href="tel:{{ site.kontakt.telefon|replace(' ', '') }}">{{ site.kontakt.telefon }}</a>{% else %}<span class="doplnime">doplníme</span>{% endif %}</dd>
         <dt>E-mail</dt><dd>{% if site.kontakt.email %}<a href="mailto:{{ site.kontakt.email }}">{{ site.kontakt.email }}</a>{% else %}<span class="doplnime">doplníme</span>{% endif %}</dd>
