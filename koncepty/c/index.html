@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="cs">
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Varianta C – Maimon, agentura práce</title>
+<meta name="description" content="Agentura práce pro firmy z výroby, skladů a logistiky. Zajistíme pracovníky na směny – dočasné přidělení, nábor do kmene i pokrytí špičky. Sídlo Liberec.">
+<link rel="icon" href="/maimon/brand/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/maimon/fonts/onest.woff2?v=da18ae26c6" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/maimon/koncepty/c.css?v=a4fe4f6563"></head>
+<body class="kc">
+<main>
+<section class="kc-hero">
+  <div class="kc-foto"><img src="/maimon/img/vozik-pohyb-1920.webp" srcset="/maimon/img/vozik-pohyb-640.webp 640w, /maimon/img/vozik-pohyb-1280.webp 1280w, /maimon/img/vozik-pohyb-1920.webp 1920w" sizes="100vw" width="1920" height="1280" alt="Řidič vysokozdvižného vozíku projíždí skladem" loading="eager" fetchpriority="high" decoding="async"></div>
+  <header class="kc-hlava">
+    <a class="kc-logo" href="/maimon/koncepty/c/"><img src="/maimon/brand/c-dark.svg" alt="Maimon – agentura práce" width="172" height="57"></a>
+    <nav class="kc-nav" aria-label="Hlavní"><a href="/maimon/pro-firmy/">Pro firmy</a><a href="/maimon/spoluprace/">Spolupráce</a><a href="/maimon/obory/">Obory</a><a href="/maimon/o-nas/">O nás</a></nav>
+    <a href="#rozpis" class="kc-pill">Poptat lidi <span aria-hidden="true">→</span></a>
+  </header>
+  <div class="kc-hero-in">
+    <div class="kc-hero-text">
+      <p class="kc-kde">Agentura práce · Liberec</p>
+      <h1 class="kc-h"><span>Lidi na</span> směnu.</h1>
+      <p class="kc-perex">Agentura práce pro firmy z&nbsp;výroby, skladů a&nbsp;logistiky. Napíšete, kolik lidí a&nbsp;na které směny chybí, my je najdeme, zaměstnáme a&nbsp;pošleme k&nbsp;vám.</p>
+      <a href="/maimon/spoluprace/" class="kc-odkaz">Jak spolupráce funguje <span aria-hidden="true">→</span></a>
+    </div>
+    <form class="kc-panel" id="rozpis" action="/maimon/kontakt/" aria-labelledby="rozpis-h">
+      <div class="kc-panel-hlava">
+        <h2 id="rozpis-h">Rozpis směn</h2>
+        <p>Kolik lidí vám chybí?</p>
+      </div>
+      
+      <div class="kc-radek">
+        <label for="s-ranni"><strong>Ranní</strong><small>6–14</small></label>
+        <div class="kc-stepper">
+          <button type="button" data-krok="-1" aria-label="Ranní – ubrat">−</button>
+          <input id="s-ranni" name="ranni" type="number" inputmode="numeric" min="0" max="99" value="4">
+          <button type="button" data-krok="1" aria-label="Ranní – přidat">+</button>
+        </div>
+      </div>
+      
+      <div class="kc-radek">
+        <label for="s-odpoledni"><strong>Odpolední</strong><small>14–22</small></label>
+        <div class="kc-stepper">
+          <button type="button" data-krok="-1" aria-label="Odpolední – ubrat">−</button>
+          <input id="s-odpoledni" name="odpoledni" type="number" inputmode="numeric" min="0" max="99" value="2">
+          <button type="button" data-krok="1" aria-label="Odpolední – přidat">+</button>
+        </div>
+      </div>
+      
+      <div class="kc-radek">
+        <label for="s-nocni"><strong>Noční</strong><small>22–6</small></label>
+        <div class="kc-stepper">
+          <button type="button" data-krok="-1" aria-label="Noční – ubrat">−</button>
+          <input id="s-nocni" name="nocni" type="number" inputmode="numeric" min="0" max="99" value="0">
+          <button type="button" data-krok="1" aria-label="Noční – přidat">+</button>
+        </div>
+      </div>
+      
+      <div class="kc-radek kc-radek-dny">
+        <label for="s-dny"><strong>Dní v&nbsp;týdnu</strong><small>po–pá, nebo i&nbsp;víkend</small></label>
+        <div class="kc-stepper">
+          <button type="button" data-krok="-1" aria-label="Dní v týdnu – ubrat">−</button>
+          <input id="s-dny" name="dny" type="number" inputmode="numeric" min="1" max="7" value="5">
+          <button type="button" data-krok="1" aria-label="Dní v týdnu – přidat">+</button>
+        </div>
+      </div>
+      <p class="kc-soucet"><span>Za týden</span><strong><output id="kc-celkem">30</output> směn</strong></p>
+      <button type="submit" class="kc-tl">Poslat rozpis <span aria-hidden="true">→</span></button>
+    </form>
+  </div>
+</section>
+
+<section class="kc-formy" aria-labelledby="formy-h">
+  <div class="kc-formy-foto"><img src="/maimon/img/montaz-oranzova-1920.webp" srcset="/maimon/img/montaz-oranzova-640.webp 640w, /maimon/img/montaz-oranzova-1280.webp 1280w, /maimon/img/montaz-oranzova-1920.webp 1920w" sizes="(min-width: 900px) 46vw, 100vw" width="1920" height="2880" alt="Pracovnice v oranžové vestě při montáži" loading="lazy" decoding="async"></div>
+  <div class="kc-formy-text">
+    <h2 id="formy-h">Tři způsoby, jak vám lidi doplníme</h2>
+    <p class="kc-formy-perex">Vyberte podle toho, jestli lidi potřebujete na čas, natrvalo, nebo jen na pár týdnů v&nbsp;roce.</p>
+  </div>
+  <ul class="kc-formy-rada">
+    
+    <li><a href="/maimon/spoluprace/#prideleni">
+      <h3>Dočasné přidělení</h3>
+      <p>Pracovníci jsou zaměstnanci agentury a pracují ve vašem provozu. Pracovní smlouvu, mzdu, odvody a lékařské prohlídky zajišťujeme my, práci jim přidělujete vy.</p>
+      <span class="kc-odkaz-mal">Podrobnosti <span aria-hidden="true">→</span></span>
+    </a></li>
+    
+    <li><a href="/maimon/spoluprace/#nabor">
+      <h3>Nábor do vašeho kmene</h3>
+      <p>Vyhledáme, oslovíme a předvybereme uchazeče, které následně zaměstnáte přímo vy. K pohovoru doporučíme pouze ty, kteří splňují vaše požadavky.</p>
+      <span class="kc-odkaz-mal">Podrobnosti <span aria-hidden="true">→</span></span>
+    </a></li>
+    
+    <li><a href="/maimon/spoluprace/#spicka">
+      <h3>Pokrytí špičky</h3>
+      <p>Sezóna, nová zakázka, inventura nebo výpadek kvůli nemocem. Na období zvýšené potřeby doplníme směny a po jeho skončení počet pracovníků opět snížíme.</p>
+      <span class="kc-odkaz-mal">Podrobnosti <span aria-hidden="true">→</span></span>
+    </a></li>
+    
+  </ul>
+</section>
+
+<section class="kc-obory" aria-labelledby="obory-h">
+  <div class="kc-obory-hlava">
+    <h2 id="obory-h">Kam lidi posíláme</h2>
+    <a href="/maimon/obory/" class="kc-odkaz">Pozice podle oborů <span aria-hidden="true">→</span></a>
+  </div>
+  <ul class="kc-obory-rada">
+    
+    <li><a href="/maimon/obory/#vyroba">
+      <span class="kc-obor-foto"><img src="/maimon/img/montaz-elektro-1920.webp" srcset="/maimon/img/montaz-elektro-640.webp 640w, /maimon/img/montaz-elektro-1280.webp 1280w, /maimon/img/montaz-elektro-1920.webp 1920w" sizes="(min-width: 1100px) 20vw, (min-width: 820px) 33vw, 80vw" width="1920" height="1280" alt="" loading="lazy" decoding="async"></span>
+      <span class="kc-obor-t"><strong>Výroba</strong><small>operátor/ka výroby · montážní pracovník · seřizovač</small></span>
+      <span class="kc-kruh" aria-hidden="true">→</span>
+    </a></li>
+    
+    <li><a href="/maimon/obory/#sklad">
+      <span class="kc-obor-foto"><img src="/maimon/img/retrak-1920.webp" srcset="/maimon/img/retrak-640.webp 640w, /maimon/img/retrak-1280.webp 1280w, /maimon/img/retrak-1920.webp 1920w" sizes="(min-width: 1100px) 20vw, (min-width: 820px) 33vw, 80vw" width="1920" height="1808" alt="" loading="lazy" decoding="async"></span>
+      <span class="kc-obor-t"><strong>Sklad</strong><small>skladník/skladnice · picker · balič/ka</small></span>
+      <span class="kc-kruh" aria-hidden="true">→</span>
+    </a></li>
+    
+    <li><a href="/maimon/obory/#vzv">
+      <span class="kc-obor-foto"><img src="/maimon/img/vozikar-1920.webp" srcset="/maimon/img/vozikar-640.webp 640w, /maimon/img/vozikar-1280.webp 1280w, /maimon/img/vozikar-1920.webp 1920w" sizes="(min-width: 1100px) 20vw, (min-width: 820px) 33vw, 80vw" width="1920" height="2400" alt="" loading="lazy" decoding="async"></span>
+      <span class="kc-obor-t"><strong>VZV</strong><small>řidič VZV · řidič retraku · manipulant</small></span>
+      <span class="kc-kruh" aria-hidden="true">→</span>
+    </a></li>
+    
+    <li><a href="/maimon/obory/#potraviny">
+      <span class="kc-obor-foto"><img src="/maimon/img/potraviny-linka-1920.webp" srcset="/maimon/img/potraviny-linka-640.webp 640w, /maimon/img/potraviny-linka-1280.webp 1280w, /maimon/img/potraviny-linka-1920.webp 1920w" sizes="(min-width: 1100px) 20vw, (min-width: 820px) 33vw, 80vw" width="1920" height="1280" alt="" loading="lazy" decoding="async"></span>
+      <span class="kc-obor-t"><strong>Potraviny</strong><small>pracovník/ce linky · balič/ka · pomocná síla</small></span>
+      <span class="kc-kruh" aria-hidden="true">→</span>
+    </a></li>
+    
+    <li><a href="/maimon/obory/#kovo">
+      <span class="kc-obor-foto"><img src="/maimon/img/svarec-1920.webp" srcset="/maimon/img/svarec-640.webp 640w, /maimon/img/svarec-1280.webp 1280w, /maimon/img/svarec-1920.webp 1920w" sizes="(min-width: 1100px) 20vw, (min-width: 820px) 33vw, 80vw" width="1920" height="1280" alt="" loading="lazy" decoding="async"></span>
+      <span class="kc-obor-t"><strong>Kovo</strong><small>svářeč · zámečník · obsluha CNC</small></span>
+      <span class="kc-kruh" aria-hidden="true">→</span>
+    </a></li>
+    
+  </ul>
+</section>
+
+<section class="kc-kontakt" aria-labelledby="kontakt-h">
+  <h2 id="kontakt-h">Napište, kolik lidí potřebujete.</h2>
+  <p>Nabídku pošleme podle vašeho rozpisu. Bez závazku a&nbsp;bez obchodních schůzek, které nikdo nechce.</p>
+  <a href="/maimon/kontakt/#poptavka" class="kc-tl">Poptat lidi <span aria-hidden="true">→</span></a>
+  <p class="kc-adresa">Maimon Brand s.r.o. · Sokolská 1365, 460 01 Liberec</p>
+</section>
+</main>
+<nav class="kv-prep" aria-label="Varianty úvodu">
+  <span>Varianta</span><a href="/maimon/koncepty/a/">A</a><a href="/maimon/koncepty/b/">B</a><a href="/maimon/koncepty/c/" aria-current="page">C</a>
+</nav>
+<script>
+(function(){
+  var f=document.getElementById('rozpis'),out=document.getElementById('kc-celkem');
+  function cislo(id){var v=parseInt(document.getElementById(id).value,10);return isNaN(v)?0:v}
+  function prepocet(){out.textContent=(cislo('s-ranni')+cislo('s-odpoledni')+cislo('s-nocni'))*cislo('s-dny')}
+  f.addEventListener('click',function(e){
+    var b=e.target.closest('button[data-krok]');if(!b)return;
+    var i=b.parentNode.querySelector('input'),v=(parseInt(i.value,10)||0)+parseInt(b.dataset.krok,10);
+    i.value=Math.min(+i.max,Math.max(+i.min,v));prepocet();
+  });
+  f.addEventListener('input',prepocet);prepocet();
+})();
+</script>
+</body>
+</html>
